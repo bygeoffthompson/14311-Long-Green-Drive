@@ -49,7 +49,6 @@ jQuery(document).ready(function() {
         var currentRoom = jQuery(location).attr("hash");
         var roomLeft = '#' + jQuery(currentRoom).prev().attr('id');
         if (roomLeft != '#undefined') {
-            console.log(roomLeft);
             location.replace(roomLeft);
         }
     }); 
@@ -58,7 +57,6 @@ jQuery(document).ready(function() {
         var currentRoom = jQuery(location).attr("hash");
         var roomRight = '#' + jQuery(currentRoom).next().attr('id');
         if (roomRight != '#undefined') {
-            console.log(roomRight);
             location.replace(roomRight);
         }
     }); 
@@ -66,9 +64,7 @@ jQuery(document).ready(function() {
     $("#down").click(function() {
         var currentRoom = jQuery(location).attr("hash");
         var currentLevel = '#' + jQuery(currentRoom).parent().parent().attr('id');
-        console.log(currentLevel);
         var levelDown = jQuery(currentLevel).prev().attr('id');
-        console.log(levelDown);
 
         if (currentLevel == '#secondFloor') {
             location.replace('#basement');
@@ -80,9 +76,7 @@ jQuery(document).ready(function() {
     $("#up").click(function() {
         var currentRoom = jQuery(location).attr("hash");
         var currentLevel = '#' + jQuery(currentRoom).parent().parent().attr('id');
-        console.log(currentLevel);
         var levelUp = jQuery(currentLevel).next().attr('id');
-        console.log(levelUp);
 
         if (currentLevel == '#firstFloor') {
             location.replace('#main');
