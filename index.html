@@ -163,10 +163,6 @@
 
 <script>
 $(document).ready(function() {
-    if ($(location).attr('hash') === '') {
-        location.replace('#front-door');
-    }
-
     $('#left').click(function() {
         var currentRoom = $(location).attr('hash');
         var currentLevel = $(currentRoom).parent().attr('id');
