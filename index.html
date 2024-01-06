@@ -93,22 +93,21 @@
 
 <script>
 $(document).ready(function() {
-    if (jQuery(location).attr('hash') === '') {
+    if ($(location).attr('hash') === '') {
         location.replace('#front-door');
     }
 
     $('#left').click(function() {
-        var currentRoom = jQuery(location).attr('hash');
-        var roomLeft = '#' + jQuery(currentRoom).prev().attr('id');
+        var currentRoom = $(location).attr('hash');
+        var currentLevel = $(currentRoom).parent().parent().attr('id');
+        var roomLeft = '#' + $(currentRoom).prev().attr('id');
         $('#right').removeClass('d-none');
-
-
 
         if (roomLeft === '#side-yard' || roomLeft === '#stairs-up' || roomLeft === '#master-bath') {
             $('#left svg').toggleClass('d-none');
         }
 
-        if (roomLeft === '#living-room') {
+        if (roomLeft === '#living-room' || roomLeft === '#family-room' || roomLeft === '#bedroom-2') {
             $('#right svg').toggleClass('d-none');
         }
 
@@ -124,26 +123,36 @@ $(document).ready(function() {
             $('#up').addClass('d-none');
         }
 
+        if (roomLeft === '#stair-1a') {
+            $('#left svg').toggleClass('d-none');
+        }
+
         if (roomLeft !== '#undefined') {
             location.replace(roomLeft);
         } else {
-            location.replace('#deck');
+            if (currentLevel === 'secondFloor') {
+                location.replace('#deck');
+            } else if (currentLevel === 'thirdFloor') {
+                location.replace('#bath-2');
+            } else {
+                location.replace('#backyard');
+            }
+
             $('#left svg, #right svg').toggleClass('d-none');
         }
     });
     
     $('#right').click(function() {
-        var currentRoom = jQuery(location).attr('hash');
-        var roomRight = '#' + jQuery(currentRoom).next().attr('id');
+        var currentRoom = $(location).attr('hash');
+        var currentLevel = $(currentRoom).parent().parent().attr('id');
+        var roomRight = '#' + $(currentRoom).next().attr('id');
         $('#left').removeClass('d-none');
-
-
 
         if (roomRight === '#deck' || roomRight === '#backyard' || roomRight === '#bath-2') {
             $('#right svg').toggleClass('d-none');
         }
 
-        if (roomRight === '#front-yard') {
+        if (roomRight === '#front-yard' || roomRight === '#basement' || roomRight === '#master-bedroom') {
             $('#left svg').toggleClass('d-none');
         }
 
@@ -162,20 +171,28 @@ $(document).ready(function() {
         if (roomRight !== '#undefined') {
             location.replace(roomRight);
         } else {
-            location.replace('#side-yard');
+            if (currentLevel === 'secondFloor') {
+                location.replace('#side-yard');
+            } else if (currentLevel === 'thirdFloor') {
+                location.replace('#master-bath');
+            } else {
+                location.replace('#stair-1a');
+            }
+
             $('#left svg, #right svg').toggleClass('d-none');
         }
     });
 
     $('#down').click(function() {
-        var currentRoom = jQuery(location).attr('hash');
-        var currentLevel = '#' + jQuery(currentRoom).parent().parent().attr('id');
+        var currentRoom = $(location).attr('hash');
+        var currentLevel = $(currentRoom).parent().parent().attr('id');
 
-        if (currentLevel === '#secondFloor') {
+        if (currentLevel === 'secondFloor') {
             location.replace('#stair-1a');
             $('#up').removeClass('d-none');
             $('#down').addClass('d-none');
-        } else if (currentLevel === '#thirdFloor') {
+            $('#left svg').toggleClass('d-none');
+        } else if (currentLevel === 'thirdFloor') {
             location.replace('#stair-2a');
             $('#up').removeClass('d-none');
             $('#down').addClass('d-none');
@@ -183,14 +200,14 @@ $(document).ready(function() {
     });
 
     $('#up').click(function() {
-        var currentRoom = jQuery(location).attr('hash');
-        var currentLevel = '#' + jQuery(currentRoom).parent().parent().attr('id');
+        var currentRoom = $(location).attr('hash');
+        var currentLevel = $(currentRoom).parent().parent().attr('id');
 
-        if (currentLevel === '#firstFloor') {
+        if (currentLevel === 'firstFloor') {
             location.replace('#stair-1b');
             $('#down').removeClass('d-none');
             $('#up').addClass('d-none');
-        } else if (currentLevel === '#secondFloor') {
+        } else if (currentLevel === 'secondFloor') {
             location.replace('#stair-2b');
             $('#down').removeClass('d-none');
             $('#up').addClass('d-none');
