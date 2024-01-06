@@ -63,16 +63,16 @@ jQuery(document).ready(function() {
             $('#left').addClass('d-none');
         }
 
-        if (roomLeft == '#stair-2-down' || roomLeft == '#stair-2-up') {
+        if (roomLeft == '#stair-2-down' || roomLeft == '#stair-3-down') {
             $('#down').removeClass('d-none');
         } else {
-            $('#down').addClass('d-none');  
+            $('#down').addClass('d-none');
         }
 
-        if (roomLeft == '#stair-2-down' || roomLeft == '#stair-2-up') {
+        if (roomLeft == '#stair-1-up' || roomLeft == '#stair-2-up') {
             $('#up').removeClass('d-none');
         } else {
-            $('#up').addClass('d-none');  
+            $('#up').addClass('d-none');
         }
 
         if (roomLeft != '#undefined') {
@@ -90,16 +90,16 @@ jQuery(document).ready(function() {
             $('#right').addClass('d-none');
         }
 
-        if (roomRight == '#stair-2-down' || roomRight == '#stair-2-up') {
+        if (roomRight == '#stair-2-down' || roomRight == '#stair-3-down') {
             $('#down').removeClass('d-none');
         } else {
-            $('#down').addClass('d-none');  
+            $('#down').addClass('d-none');
         }
 
-        if (roomRight == '#stair-2-up' || roomRight == '#stair-2-down') {
+        if (roomRight == '#stair-1-up' || roomRight == '#stair-2-up') {
             $('#up').removeClass('d-none');
         } else {
-            $('#up').addClass('d-none');  
+            $('#up').addClass('d-none');
         }
 
         if (roomRight != '#undefined') {
@@ -117,10 +117,11 @@ jQuery(document).ready(function() {
         }
 
         if (currentLevel == '#secondFloor') {
-            location.replace('#basement');
-            $('#down, #up').addClass('d-none');
+            $('#down').removeClass('d-none');
+            $('#up').addClass('d-none');
+            location.replace('#stair-1-up');
         } else if (currentLevel == '#thirdFloor') {
-            location.replace('#entry');
+            location.replace('#stair-2-up');
             $('#down, #up').addClass('d-none');
         };
     });
@@ -131,11 +132,12 @@ jQuery(document).ready(function() {
         var levelUp = jQuery(currentLevel).next().attr('id');
 
         if (currentLevel == '#firstFloor') {
-            location.replace('#entry');
+            location.replace('#stair-2-down');
             $('#down, #up').addClass('d-none');
         } else if (currentLevel == '#secondFloor') {
-            location.replace('#upstairs');
-            $('#down, #up').addClass('d-none');
+            location.replace('#stair-3-down');
+            $('#down').removeClass('d-none');
+            $('#up').addClass('d-none');
         };
     });
 });
