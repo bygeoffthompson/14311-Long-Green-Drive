@@ -8,37 +8,87 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body class="overflow-hidden">
-<div class="border-3" id="firstFloor" style="height:100vh;width:600vw">
+<div id="controls">
+    <button class="position-fixed" id="left" style="bottom:0;left:0;">Left</button>
+    <button class="position-fixed" id="right" style="bottom:0;right:0;">Right</button>
+    <button class="position-fixed" id="down" style="bottom:0;left:50%;transform:translateX(-50%);">Down</button>
+    <button class="position-fixed" id="up" style="left:50%;transform:translateX(-50%);top:0;">Up</button>
+</div>
+<div class="border-3" id="secondFloor" style="height:100vh;width:600vw">
   <div class="align-items-center d-flex h-100 justify-content-around rooms text-center w-100">
-    <div class="bg-primary" id="hallway" style="width:100vw;"><p>Hallway</p></div>
-    <div style="width:100vw;" id="wash-room"><p>Wash Room</p></div>
-    <div class="bg-primary" id="kitchen" style="width:100vw;"><p>Kitchen</p></div>
-    <div style="width:100vw;" id="dining-room"><p>Dining Room</p></div>
-    <div class="bg-primary" id="living-room" style="width:100vw;"><p>Living Room</p></div>
-    <div style="width:100vw;" id="deck"><p>Deck</p></div>
+    <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="main" style="width:100vw;"><p>Hallway</p></div>
+    <div class="align-items-center d-flex justify-content-center h-100" style="width:100vw;" id="wash"><p>Wash Room</p></div>
+    <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="kitchen" style="width:100vw;"><p>Kitchen</p></div>
+    <div class="align-items-center d-flex justify-content-center h-100" style="width:100vw;" id="dining-room"><p>Dining Room</p></div>
+    <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="living-room" style="width:100vw;"><p>Living Room</p></div>
+    <div class="align-items-center d-flex justify-content-center h-100" style="width:100vw;" id="deck"><p>Deck</p></div>
   </div>
-  <button class="position-fixed" id="left" style="bottom:0;left:0;">Left</button>
-  <button class="position-fixed" id="right" style="bottom:0;right:0;">Right</button>
-  <button class="position-fixed" id="down" style="bottom:0;left:50%;transform:translateX(-50%);">Down</button>
-  <button class="position-fixed" id="up" style="left:50%;transform:translateX(-50%);top:0;">Up</button>
+</div>
+<div class="border-3" id="firstFloor" style="height:100vh;width:600vw">
+    <div class="align-items-center d-flex h-100 justify-content-around rooms text-center w-100">
+      <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="basement" style="width:100vw;"><p>Hallway</p></div>
+      <div class="align-items-center d-flex justify-content-center h-100" style="width:100vw;" id="basement-bath"><p>Bath</p></div>
+      <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="mechanical" style="width:100vw;"><p>Mechanical</p></div>
+      <div class="align-items-center d-flex justify-content-center h-100" style="width:100vw;" id="family-room"><p>Family</p></div>
+      <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="backyard" style="width:100vw;"><p>Backyard</p></div>
+    </div>
+</div>
+<div class="border-3" id="ThirdFloor" style="height:100vh;width:600vw">
+    <div class="align-items-center d-flex h-100 justify-content-around rooms text-center w-100">
+      <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="upstairs" style="width:100vw;"><p>Upstairs Hallway</p></div>
+      <div class="align-items-center d-flex justify-content-center h-100" style="width:100vw;" id="bedroom-1"><p>Bedroom 1</p></div>
+      <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="master-bathroom" style="width:100vw;"><p>Master Bathroom</p></div>
+      <div class="align-items-center d-flex justify-content-center h-100" style="width:100vw;" id="bedroom-2"><p>Bedroom 2</p></div>
+      <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="upstairs-bath" style="width:100vw;"><p>Upstairs Bath</p></div>
+    </div>
 </div>
 
 <script>
 jQuery(document).ready(function() {
-    var currentPosition = jQuery(location).attr("hash");
-
     $("#left").click(function() {
-        var currentPosition = jQuery(location).attr("hash");
-        var roomLeft = '#' + jQuery(currentPosition).prev().attr('id');
-        console.log(roomLeft);
-        location.replace(roomLeft);
+        var currentRoom = jQuery(location).attr("hash");
+        var roomLeft = '#' + jQuery(currentRoom).prev().attr('id');
+        if (roomLeft != '#undefined') {
+            console.log(roomLeft);
+            location.replace(roomLeft);
+        }
     }); 
     
     $("#right").click(function() {
-        var currentPosition = jQuery(location).attr("hash");
-        var roomRight = '#' + jQuery(currentPosition).next().attr('id');
-        console.log(roomRight);
-        location.replace(roomRight);
+        var currentRoom = jQuery(location).attr("hash");
+        var roomRight = '#' + jQuery(currentRoom).next().attr('id');
+        if (roomRight != '#undefined') {
+            console.log(roomRight);
+            location.replace(roomRight);
+        }
+    }); 
+
+    $("#down").click(function() {
+        var currentRoom = jQuery(location).attr("hash");
+        var currentLevel = '#' + jQuery(currentRoom).parent().parent().attr('id');
+        console.log(currentLevel);
+        var levelDown = jQuery(currentLevel).prev().attr('id');
+        console.log(levelDown);
+
+        if (currentLevel == '#secondFloor') {
+            location.replace('#basement');
+        } else if (currentLevel == '#ThirdFloor') {
+            location.replace('#main');
+        };
+    }); 
+
+    $("#up").click(function() {
+        var currentRoom = jQuery(location).attr("hash");
+        var currentLevel = '#' + jQuery(currentRoom).parent().parent().attr('id');
+        console.log(currentLevel);
+        var levelUp = jQuery(currentLevel).next().attr('id');
+        console.log(levelUp);
+
+        if (currentLevel == '#firstFloor') {
+            location.replace('#main');
+        } else if (currentLevel == '#secondFloor') {
+            location.replace('#upstairs');
+        };
     }); 
 });
 </script>
