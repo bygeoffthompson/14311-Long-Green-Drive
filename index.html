@@ -126,7 +126,7 @@
 
 <script>
 $(document).ready(function(){
-    $('.rooms').slick({
+    $('.activeFloor').slick({
         arrows: false,
         adaptiveHeight: true
     });
@@ -135,12 +135,19 @@ $(document).ready(function(){
         currentLevel = $('.activeFloor').attr('id');
 
         if (currentLevel !== 'firstFloor') {
-            $('.activeFloor').toggleClass('activeFloor d-none').prev().toggleClass('activeFloor d-none');
-            $('.rooms').slick('unslick');
-            $('.rooms').slick({
+            $('.activeFloor').slick('unslick').toggleClass('activeFloor d-none').prev().toggleClass('activeFloor d-none');
+            $('.activeFloor').slick({
                 arrows: false,
                 adaptiveHeight: true
             });
+        }
+
+        if (currentLevel === 'secondFloor') {
+            $('#go-downstairs').addClass('d-none');
+        }
+
+        if (currentLevel === 'thirdFloor') {
+            $('#go-upstairs').removeClass('d-none');
         }
     });
 
@@ -148,12 +155,19 @@ $(document).ready(function(){
         currentLevel = $('.activeFloor').attr('id');
 
         if (currentLevel !== 'thirdFloor') {
-            $('.activeFloor').toggleClass('activeFloor d-none').next().toggleClass('activeFloor d-none');
-            $('.rooms').slick('unslick');
-            $('.rooms').slick({
+            $('.activeFloor').slick('unslick').toggleClass('activeFloor d-none').next().toggleClass('activeFloor d-none');
+            $('.activeFloor').slick({
                 arrows: false,
                 adaptiveHeight: true
             });
+        }
+
+        if (currentLevel === 'secondFloor') {
+            $('#go-upstairs').addClass('d-none');
+        }
+
+        if (currentLevel === 'firstFloor') {
+            $('#go-downstairs').removeClass('d-none');
         }
     });
 });
