@@ -9,38 +9,41 @@
 </head>
 <body class="overflow-hidden">
 <div id="controls">
-    <button class="d-none position-fixed" id="left" style="bottom:0;left:0;">Back</button>
+    <button class="position-fixed" id="left" style="bottom:0;left:0;">Back</button>
     <button class="position-fixed" id="right" style="bottom:0;right:0;">Forward</button>
     <button class="d-none position-fixed" id="down" style="bottom:0;left:50%;transform:translateX(-50%);">Down</button>
     <button class="d-none position-fixed" id="up" style="left:50%;transform:translateX(-50%);top:0;">Up</button>
 </div>
-<div class="border-3" id="secondFloor" style="height:100vh;width:800vw">
+<div class="border-3" id="secondFloor" style="height:100vh;width:1100vw">
   <div class="align-items-center d-flex h-100 justify-content-around rooms text-center w-100">
+    <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="side-yard" style="width:100vw;"><p>Side Yard</p></div>
+    <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="front-yard" style="width:100vw;"><p>Front Yard</p></div>
+    <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="front-door" style="width:100vw;"><p>Front Door</p></div>
     <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="entry" style="width:100vw;"><p>Entry</p></div>
     <div class="align-items-center d-flex justify-content-center h-100" style="width:100vw;" id="water-closet"><p>Water Closet</p></div>
     <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="kitchen" style="width:100vw;"><p>Kitchen</p></div>
-    <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="stair-2-up" style="width:100vw;"><p>Stairs Up</p></div>
+    <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="stair-2a" style="width:100vw;"><p>Stairs</p></div>
     <div class="align-items-center d-flex justify-content-center h-100" style="width:100vw;" id="dining-room"><p>Dining Room</p></div>
-    <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="stair-2-down" style="width:100vw;"><p>Stairs Down</p></div>
+    <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="stair-1b" style="width:100vw;"><p>Stairs</p></div>
     <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="living-room" style="width:100vw;"><p>Living Room</p></div>
     <div class="align-items-center d-flex justify-content-center h-100" style="width:100vw;" id="deck"><p>Deck</p></div>
   </div>
 </div>
 <div class="border-3" id="firstFloor" style="height:100vh;width:600vw">
     <div class="align-items-center d-flex h-100 justify-content-around rooms text-center w-100">
-      <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="stair-1-up" style="width:100vw;"><p>Stairway Up</p></div>
+      <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="stair-1a" style="width:100vw;"><p>Stairs</p></div>
       <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="basement" style="width:100vw;"><p>Hallway</p></div>
       <div class="align-items-center d-flex justify-content-center h-100" style="width:100vw;" id="basement-bath"><p>Bath</p></div>
       <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="mechanical" style="width:100vw;"><p>Mechanical</p></div>
       <div class="align-items-center d-flex justify-content-center h-100" style="width:100vw;" id="family-room"><p>Family</p></div>
-      <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="backyard" style="width:100vw;"><p>Backyard</p></div>
+      <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="back-yard" style="width:100vw;"><p>Back Yard</p></div>
     </div>
 </div>
 <div class="border-3" id="thirdFloor" style="height:100vh;width:600vw">
     <div class="align-items-center d-flex h-100 justify-content-around rooms text-center w-100">
         <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="master-bath" style="width:100vw;"><p>Master Bath</p></div>
         <div class="align-items-center d-flex justify-content-center h-100" style="width:100vw;" id="master-bedroom"><p>Master Bedroom</p></div>
-        <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="stair-3-down" style="width:100vw;"><p>Stairway Down</p></div>
+        <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="stair-2b" style="width:100vw;"><p>Stairs</p></div>
       <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="upstairs" style="width:100vw;"><p>Upstairs Hallway</p></div>
       <div class="align-items-center d-flex justify-content-center h-100" style="width:100vw;" id="bedroom-2"><p>Bedroom 2</p></div>
       <div class="align-items-center d-flex justify-content-center bg-primary h-100" id="bath-2" style="width:100vw;"><p>Bath 2</p></div>
@@ -50,7 +53,7 @@
 <script>
 jQuery(document).ready(function() {
     if (jQuery(location).attr("hash") == '') {
-        location.replace('#entry');
+        location.replace('#front-door');
     }
 
     $("#left").click(function() {
@@ -63,13 +66,13 @@ jQuery(document).ready(function() {
             $('#left').addClass('d-none');
         }
 
-        if (roomLeft == '#stair-2-down' || roomLeft == '#stair-3-down') {
+        if (roomLeft == '#stair-1b' || roomLeft == '#stair-2b') {
             $('#down').removeClass('d-none');
         } else {
             $('#down').addClass('d-none');
         }
 
-        if (roomLeft == '#stair-1-up' || roomLeft == '#stair-2-up') {
+        if (roomLeft == '#stair-1a' || roomLeft == '#stair-2a') {
             $('#up').removeClass('d-none');
         } else {
             $('#up').addClass('d-none');
@@ -90,13 +93,13 @@ jQuery(document).ready(function() {
             $('#right').addClass('d-none');
         }
 
-        if (roomRight == '#stair-2-down' || roomRight == '#stair-3-down') {
+        if (roomRight == '#stair-1b' || roomRight == '#stair-2b') {
             $('#down').removeClass('d-none');
         } else {
             $('#down').addClass('d-none');
         }
 
-        if (roomRight == '#stair-1-up' || roomRight == '#stair-2-up') {
+        if (roomRight == '#stair-1a' || roomRight == '#stair-2a') {
             $('#up').removeClass('d-none');
         } else {
             $('#up').addClass('d-none');
@@ -119,9 +122,9 @@ jQuery(document).ready(function() {
         if (currentLevel == '#secondFloor') {
             $('#down').removeClass('d-none');
             $('#up').addClass('d-none');
-            location.replace('#stair-1-up');
+            location.replace('#stair-1a');
         } else if (currentLevel == '#thirdFloor') {
-            location.replace('#stair-2-up');
+            location.replace('#stair-2a');
             $('#down, #up').addClass('d-none');
         };
     });
@@ -132,10 +135,10 @@ jQuery(document).ready(function() {
         var levelUp = jQuery(currentLevel).next().attr('id');
 
         if (currentLevel == '#firstFloor') {
-            location.replace('#stair-2-down');
+            location.replace('#stair-1b');
             $('#down, #up').addClass('d-none');
         } else if (currentLevel == '#secondFloor') {
-            location.replace('#stair-3-down');
+            location.replace('#stair-2b');
             $('#down').removeClass('d-none');
             $('#up').addClass('d-none');
         };
