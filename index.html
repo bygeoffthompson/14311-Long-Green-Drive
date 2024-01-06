@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
-        .h-10{height:10%;}
+        .h-5{height:5%;}
         .w-10{width:10%;}
         .w-100vw{width:100vw;}
     </style>
@@ -18,153 +18,183 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
         </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise d-none loop" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
+            <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
+        </svg>
     </button>
     <button class="bg-transparent border-0 end-0 h-100 position-fixed text-end w-10" id="right">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
         </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-counterclockwise d-none loop" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2z"/>
+            <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466"/>
+        </svg>
     </button>
-    <button class="align-items-end bg-transparent border-0 bottom-0 d-flex d-none h-10 justify-content-center position-fixed w-100" id="down">
+    <button class="align-items-end bg-transparent border-0 bottom-0 d-flex d-none h-5 justify-content-center position-fixed w-100" id="down">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
         </svg>
     </button>
-    <button class="align-items-start bg-transparent border-0 d-flex d-none h-10 justify-content-center position-fixed top-0 w-100" id="up">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/>
-        </svg>
-    </button>
+    <div class="d-flex position-fixed top-0 w-100">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Contact
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">Schedule a Viewing</a></li>
+                <li><a class="dropdown-item" href="tel:1234567890">Call Realtor</a></li>
+                <li><a class="dropdown-item" href="mailto:house@house.house">Email Realtor</a></li>
+            </ul>
+        </div>
+        <button class="bg-transparent border-0 d-none w-100" id="up">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/>
+            </svg>
+        </button>
+    </div>
 </div>
 <div id="secondFloor" style="height:100vh;width:1100vw">
   <div class="align-items-center d-flex h-100 justify-content-around rooms text-center w-100">
-    <div class="align-items-center d-flex justify-content-center bg-primary h-100 w-100vw" id="side-yard"><p>Side Yard</p></div>
-    <div class="align-items-center d-flex justify-content-center bg-primary h-100 w-100vw" id="front-yard"><p>Front Yard</p></div>
-    <div class="align-items-center d-flex justify-content-center bg-primary h-100 w-100vw" id="front-door"><p>Front Door</p></div>
-    <div class="align-items-center d-flex justify-content-center bg-primary h-100 w-100vw" id="entry"><p>Entry</p></div>
+    <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="side-yard"><p>Side Yard</p></div>
+    <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="front-yard"><p>Front Yard</p></div>
+    <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="front-door"><p>Front Door</p></div>
+    <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="entry"><p>Entry</p></div>
     <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="water-closet"><p>Water Closet</p></div>
-    <div class="align-items-center d-flex justify-content-center bg-primary h-100 w-100vw" id="kitchen"><p>Kitchen</p></div>
-    <div class="align-items-center d-flex justify-content-center bg-primary h-100 w-100vw" id="stair-2a"><p>Stairs</p></div>
+    <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="kitchen"><p>Kitchen</p></div>
+    <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="stair-2a"><p>Stairs</p></div>
     <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="dining-room"><p>Dining Room</p></div>
-    <div class="align-items-center d-flex justify-content-center bg-primary h-100 w-100vw" id="stair-1b"><p>Stairs</p></div>
-    <div class="align-items-center d-flex justify-content-center bg-primary h-100 w-100vw" id="living-room"><p>Living Room</p></div>
+    <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="stair-1b"><p>Stairs</p></div>
+    <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="living-room"><p>Living Room</p></div>
     <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="deck"><p>Deck</p></div>
   </div>
 </div>
 <div id="firstFloor" style="height:100vh;width:600vw">
     <div class="align-items-center d-flex h-100 justify-content-around rooms text-center w-100">
-      <div class="align-items-center d-flex justify-content-center bg-primary h-100 w-100vw" id="stair-1a"><p>Stairs</p></div>
-      <div class="align-items-center d-flex justify-content-center bg-primary h-100 w-100vw" id="basement"><p>Hallway</p></div>
+      <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="stair-1a"><p>Stairs</p></div>
+      <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="basement"><p>Hallway</p></div>
       <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="basement-bath"><p>Bath</p></div>
-      <div class="align-items-center d-flex justify-content-center bg-primary h-100 w-100vw" id="mechanical"><p>Mechanical</p></div>
+      <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="mechanical"><p>Mechanical</p></div>
       <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="family-room"><p>Family</p></div>
-      <div class="align-items-center d-flex justify-content-center bg-primary h-100 w-100vw" id="backyard"><p>Backyard</p></div>
+      <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="backyard"><p>Backyard</p></div>
     </div>
 </div>
 <div id="thirdFloor" style="height:100vh;width:600vw">
     <div class="align-items-center d-flex h-100 justify-content-around rooms text-center w-100">
-      <div class="align-items-center d-flex justify-content-center bg-primary h-100 w-100vw" id="master-bath"><p>Master Bath</p></div>
+      <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="master-bath"><p>Master Bath</p></div>
       <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="master-bedroom"><p>Master Bedroom</p></div>
-      <div class="align-items-center d-flex justify-content-center bg-primary h-100 w-100vw" id="stair-2b"><p>Stairs</p></div>
-      <div class="align-items-center d-flex justify-content-center bg-primary h-100 w-100vw" id="upstairs"><p>Upstairs Hallway</p></div>
+      <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="stair-2b"><p>Stairs</p></div>
+      <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="upstairs"><p>Upstairs Hallway</p></div>
       <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="bedroom-2"><p>Bedroom 2</p></div>
-      <div class="align-items-center d-flex justify-content-center bg-primary h-100 w-100vw" id="bath-2"><p>Bath 2</p></div>
+      <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="bath-2"><p>Bath 2</p></div>
     </div>
 </div>
 
 <script>
-jQuery(document).ready(function() {
-    if (jQuery(location).attr("hash") == '') {
+$(document).ready(function() {
+    if (jQuery(location).attr('hash') === '') {
         location.replace('#front-door');
     }
 
-    $("#left").click(function() {
-        var currentRoom = jQuery(location).attr("hash");
+    $('#left').click(function() {
+        var currentRoom = jQuery(location).attr('hash');
         var roomLeft = '#' + jQuery(currentRoom).prev().attr('id');
         $('#right').removeClass('d-none');
-  
 
-        if (roomLeft == '#entry' || roomLeft == '#stairs-up' || roomLeft == '#master-bath') {
-            $('#left').addClass('d-none');
+
+
+        if (roomLeft === '#side-yard' || roomLeft === '#stairs-up' || roomLeft === '#master-bath') {
+            $('#left svg').toggleClass('d-none');
         }
 
-        if (roomLeft == '#stair-1b' || roomLeft == '#stair-2b') {
+        if (roomLeft === '#living-room') {
+            $('#right svg').toggleClass('d-none');
+        }
+
+        if (roomLeft === '#stair-1b' || roomLeft === '#stair-2b') {
             $('#down').removeClass('d-none');
         } else {
             $('#down').addClass('d-none');
         }
 
-        if (roomLeft == '#stair-1a' || roomLeft == '#stair-2a') {
+        if (roomLeft === '#stair-1a' || roomLeft === '#stair-2a') {
             $('#up').removeClass('d-none');
         } else {
             $('#up').addClass('d-none');
         }
 
-        if (roomLeft != '#undefined') {
+        if (roomLeft !== '#undefined') {
             location.replace(roomLeft);
+        } else {
+            location.replace('#deck');
+            $('#left svg, #right svg').toggleClass('d-none');
         }
     });
     
-    $("#right").click(function() {
-        var currentRoom = jQuery(location).attr("hash");
+    $('#right').click(function() {
+        var currentRoom = jQuery(location).attr('hash');
         var roomRight = '#' + jQuery(currentRoom).next().attr('id');
         $('#left').removeClass('d-none');
 
 
-        if (roomRight == '#deck' || roomRight == '#backyard' || roomRight == '#bath-2') {
-            $('#right').addClass('d-none');
+
+        if (roomRight === '#deck' || roomRight === '#backyard' || roomRight === '#bath-2') {
+            $('#right svg').toggleClass('d-none');
         }
 
-        if (roomRight == '#stair-1b' || roomRight == '#stair-2b') {
+        if (roomRight === '#front-yard') {
+            $('#left svg').toggleClass('d-none');
+        }
+
+        if (roomRight === '#stair-1b' || roomRight === '#stair-2b') {
             $('#down').removeClass('d-none');
         } else {
             $('#down').addClass('d-none');
         }
 
-        if (roomRight == '#stair-1a' || roomRight == '#stair-2a') {
+        if (roomRight === '#stair-1a' || roomRight === '#stair-2a') {
             $('#up').removeClass('d-none');
         } else {
             $('#up').addClass('d-none');
         }
 
-        if (roomRight != '#undefined') {
+        if (roomRight !== '#undefined') {
             location.replace(roomRight);
+        } else {
+            location.replace('#side-yard');
+            $('#left svg, #right svg').toggleClass('d-none');
         }
     });
 
-    $("#down").click(function() {
-        var currentRoom = jQuery(location).attr("hash");
+    $('#down').click(function() {
+        var currentRoom = jQuery(location).attr('hash');
         var currentLevel = '#' + jQuery(currentRoom).parent().parent().attr('id');
-        var levelDown = jQuery(currentLevel).prev().attr('id');
 
-        if (levelDown == 'firstFloor') {
-            $('#down').addClass('d-none');
-        }
-
-        if (currentLevel == '#secondFloor') {
+        if (currentLevel === '#secondFloor') {
             location.replace('#stair-1a');
             $('#up').removeClass('d-none');
             $('#down').addClass('d-none');
-        } else if (currentLevel == '#thirdFloor') {
+        } else if (currentLevel === '#thirdFloor') {
             location.replace('#stair-2a');
             $('#up').removeClass('d-none');
             $('#down').addClass('d-none');
-        };
+        }
     });
 
-    $("#up").click(function() {
-        var currentRoom = jQuery(location).attr("hash");
+    $('#up').click(function() {
+        var currentRoom = jQuery(location).attr('hash');
         var currentLevel = '#' + jQuery(currentRoom).parent().parent().attr('id');
-        var levelUp = jQuery(currentLevel).next().attr('id');
 
-        if (currentLevel == '#firstFloor') {
+        if (currentLevel === '#firstFloor') {
             location.replace('#stair-1b');
             $('#down').removeClass('d-none');
             $('#up').addClass('d-none');
-        } else if (currentLevel == '#secondFloor') {
+        } else if (currentLevel === '#secondFloor') {
             location.replace('#stair-2b');
             $('#down').removeClass('d-none');
             $('#up').addClass('d-none');
-        };
+        }
     });
 });
 </script>
