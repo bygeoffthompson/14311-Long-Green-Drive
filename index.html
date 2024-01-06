@@ -241,13 +241,17 @@ $(document).ready(function() {
 
         if (roomRight !== '#undefined') {
             location.replace(roomRight);
+            location.reload();
         } else {
             if (currentLevel === 'secondFloor') {
                 location.replace('#side-yard');
+                location.reload();
             } else if (currentLevel === 'thirdFloor') {
                 location.replace('#master-bath');
+                location.reload();
             } else {
                 location.replace('#stair-1a');
+                location.reload();
             }
 
             $('#left svg, #right svg').toggleClass('d-none');
