@@ -17,164 +17,131 @@
 </head>
 <body class="overflow-hidden">
 <div class="d-none">
-  <h1>14311 Long Green Drive Silver Spring, MD 20906</h1>
+    <h1>14311 Long Green Drive Silver Spring, MD 20906</h1>
 </div>
-<div class="position-relative" style="z-index:1;">
-    <button class="position-fixed top-0" id="go-upstairs">Go Upstairs</button>
-    <button class="bottom-0 position-fixed" id="go-downstairs">Go Downstairs</button>
-</div>
-<div class="d-none h-100vh rooms" id="firstFloor">
-    <div class="align-items-center d-flex justify-content-center h-100"><p>Stairs</p></div>
-    <div class="align-items-center d-flex justify-content-center h-100"><p>Hallway</p></div>
-    <div class="align-items-center d-flex justify-content-center h-100"><p>Bath</p></div>
-    <div class="align-items-center d-flex justify-content-center h-100"><p>Mechanical</p></div>
-    <div class="align-items-center d-flex justify-content-center h-100"><p>Family</p></div>
-    <div class="align-items-center d-flex justify-content-center h-100"><p>Backyard</p></div>
-</div>
-<div class="activeFloor h-100vh rooms" id="secondFloor">
-    <div class="align-items-center d-flex justify-content-center h-100"><p>Front Door</p></div>
-    <div class="align-items-center d-flex justify-content-center h-100"><p>Entry</p></div>
-    <div class="align-items-center d-flex justify-content-center h-100"><p>Water Closet</p></div>
-    <div class="align-items-center d-flex justify-content-center h-100"><p>Kitchen</p></div>
-    <div class="align-items-center d-flex justify-content-center h-100"><p>Stairs</p></div>
-    <div class="align-items-center d-flex justify-content-center h-100"><p>Dining Room</p></div>
-    <div class="align-items-center d-flex justify-content-center h-100"><p>Stairs</p></div>
-    <div class="align-items-center d-flex justify-content-center h-100"><p>Living Room</p></div>
-    <div class="align-items-center d-flex justify-content-center h-100"><p>Deck</p></div>
-    <div class="align-items-center d-flex justify-content-center h-100"><p>Side Yard</p></div>
-    <div class="align-items-center d-flex justify-content-center h-100"><p>Front Yard</p></div>
-</div>
-<div class="d-none h-100vh rooms" id="thirdFloor">
-      <div class="align-items-end bg-image d-flex justify-content-center h-100 " id="master-bath" style="background-image:url(img/master-bath.jpg)">
-          <div class="card">
-              <div class="card-body">
-                  <h5 class="card-title">Master Bath</h5>
-                  <p class="card-text">Glass enclosed show and great lighting.</p>
-              </div>
-          </div>
-      </div>
-      <div class="align-items-end bg-image d-flex justify-content-center h-100 " id="master-bedroom" style="background-image:url(img/master-bedroom.jpg)">
-          <div class="card">
-              <div class="card-body">
-                  <h5 class="card-title">Master Bedroom</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Connects with the Master Bath</h6>
-                  <p class="card-text">Excellent size and wonderful window views!</p>
-                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#masterWindow1">
-                      Window View 1
-                  </button>
-                  <div class="modal fade" id="masterWindow1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered">
-                          <div class="border-0 modal-content">
-                              <div class="modal-header">
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                              </div>
-                              <div class="modal-body p-0">
-                                  <img class="img-fluid" src="img/window-1.jpg">
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#masterWindow2">
-                      Window View 2
-                  </button>
-                  <div class="modal fade" id="masterWindow2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered">
-                          <div class="border-0 modal-content">
-                              <div class="modal-header">
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                              </div>
-                              <div class="modal-body p-0">
-                                  <img class="img-fluid" src="img/window-2.jpg">
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="align-items-end bg-image d-flex justify-content-center h-100 " id="stair-2b" style="background-image:url(img/stair-2b.jpg)">
-          <div class="card">
-              <div class="card-body">
-                  <h5 class="card-title">Stairs</h5>
-                  <p class="card-text">Two turn staircase.</p>
-              </div>
-          </div>
-      </div>
-      <div class="align-items-end bg-image d-flex justify-content-center h-100 " id="upstairs" style="background-image:url(img/upstairs.jpg)">
-          <div class="card">
-              <div class="card-body">
-                  <h5 class="card-title">Upstairs Hallway</h5>
-                  <p class="card-text">Light Oak style laminate flooring.</p>
-                  <p class="card-text">Sliding door closet located on the left.</p>
-              </div>
-          </div>
-      </div>
-      <div class="align-items-end bg-image d-flex justify-content-center h-100 " id="bedroom-2" style="background-image:url(img/bedroom-2.jpg)">
-          <div class="card">
-              <div class="card-body">
-                  <h5 class="card-title">Bedroom 2</h5>
-                  <p class="card-text"></p>
-              </div>
-          </div>
-          </p></div>
-      <div class="align-items-end bg-image d-flex justify-content-center h-100 " id="bath-2" style="background-image:url(img/bath-2.jpg)">
-          <div class="card">
-              <div class="card-body">
-                  <h5 class="card-title">Bath 2</h5>
-                  <p class="card-text"></p>
-              </div>
-          </div>
-      </div>
+
+<div class="vert">
+    <div class="h-100vh rooms" id="thirdFloor">
+        <div class="align-items-end bg-image d-flex justify-content-center h-100 " id="master-bath" style="background-image:url(img/master-bath.jpg)">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Master Bath</h5>
+                    <p class="card-text">Glass enclosed show and great lighting.</p>
+                </div>
+            </div>
+        </div>
+        <div class="align-items-end bg-image d-flex justify-content-center h-100 " id="master-bedroom" style="background-image:url(img/master-bedroom.jpg)">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Master Bedroom</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Connects with the Master Bath</h6>
+                    <p class="card-text">Excellent size and wonderful window views!</p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#masterWindow1">
+                        Window View 1
+                    </button>
+                    <div class="modal fade" id="masterWindow1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="border-0 modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body p-0">
+                                    <img class="img-fluid" src="img/window-1.jpg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#masterWindow2">
+                        Window View 2
+                    </button>
+                    <div class="modal fade" id="masterWindow2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="border-0 modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body p-0">
+                                    <img class="img-fluid" src="img/window-2.jpg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="align-items-end bg-image d-flex justify-content-center h-100 " id="stair-2b" style="background-image:url(img/stair-2b.jpg)">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Stairs</h5>
+                    <p class="card-text">Two turn staircase.</p>
+                </div>
+            </div>
+        </div>
+        <div class="align-items-end bg-image d-flex justify-content-center h-100 " id="upstairs" style="background-image:url(img/upstairs.jpg)">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Upstairs Hallway</h5>
+                    <p class="card-text">Light Oak style laminate flooring.</p>
+                    <p class="card-text">Sliding door closet located on the left.</p>
+                </div>
+            </div>
+        </div>
+        <div class="align-items-end bg-image d-flex justify-content-center h-100 " id="bedroom-2" style="background-image:url(img/bedroom-2.jpg)">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Bedroom 2</h5>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+            </p></div>
+        <div class="align-items-end bg-image d-flex justify-content-center h-100 " id="bath-2" style="background-image:url(img/bath-2.jpg)">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Bath 2</h5>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="activeFloor h-100vh rooms" id="secondFloor">
+        <div class="align-items-center d-flex justify-content-center h-100"><p>Front Door</p></div>
+        <div class="align-items-center d-flex justify-content-center h-100"><p>Entry</p></div>
+        <div class="align-items-center d-flex justify-content-center h-100"><p>Water Closet</p></div>
+        <div class="align-items-center d-flex justify-content-center h-100"><p>Kitchen</p></div>
+        <div class="align-items-center d-flex justify-content-center h-100"><p>Stairs</p></div>
+        <div class="align-items-center d-flex justify-content-center h-100"><p>Dining Room</p></div>
+        <div class="align-items-center d-flex justify-content-center h-100"><p>Stairs</p></div>
+        <div class="align-items-center d-flex justify-content-center h-100"><p>Living Room</p></div>
+        <div class="align-items-center d-flex justify-content-center h-100"><p>Deck</p></div>
+        <div class="align-items-center d-flex justify-content-center h-100"><p>Side Yard</p></div>
+        <div class="align-items-center d-flex justify-content-center h-100"><p>Front Yard</p></div>
+    </div>
+    <div class="h-100vh rooms" id="firstFloor">
+        <div class="align-items-center d-flex justify-content-center h-100"><p>Stairs</p></div>
+        <div class="align-items-center d-flex justify-content-center h-100"><p>Hallway</p></div>
+        <div class="align-items-center d-flex justify-content-center h-100"><p>Bath</p></div>
+        <div class="align-items-center d-flex justify-content-center h-100"><p>Mechanical</p></div>
+        <div class="align-items-center d-flex justify-content-center h-100"><p>Family</p></div>
+        <div class="align-items-center d-flex justify-content-center h-100"><p>Backyard</p></div>
+    </div>
+
 </div>
 
 
 <script>
-$(document).ready(function(){
-    $('.activeFloor').slick({
-        arrows: false,
-        adaptiveHeight: true
+    $(document).ready(function(){
+        $('.rooms').slick({
+            arrows: false,
+        });
+
+        $('.vert').slick({
+            arrows: false,
+            infinite: false,
+            initialSlide: 1,
+            vertical: true,
+            verticalSwiping: true
+        });
     });
-
-    $('#go-downstairs').click(function() {
-        currentLevel = $('.activeFloor').attr('id');
-
-        if (currentLevel !== 'firstFloor') {
-            $('.activeFloor').slick('unslick').toggleClass('activeFloor d-none').prev().toggleClass('activeFloor d-none');
-            $('.activeFloor').slick({
-                arrows: false,
-                adaptiveHeight: true
-            });
-        }
-
-        if (currentLevel === 'secondFloor') {
-            $('#go-downstairs').addClass('d-none');
-        }
-
-        if (currentLevel === 'thirdFloor') {
-            $('#go-upstairs').removeClass('d-none');
-        }
-    });
-
-    $('#go-upstairs').click(function() {
-        currentLevel = $('.activeFloor').attr('id');
-
-        if (currentLevel !== 'thirdFloor') {
-            $('.activeFloor').slick('unslick').toggleClass('activeFloor d-none').next().toggleClass('activeFloor d-none');
-            $('.activeFloor').slick({
-                arrows: false,
-                adaptiveHeight: true
-            });
-        }
-
-        if (currentLevel === 'secondFloor') {
-            $('#go-upstairs').addClass('d-none');
-        }
-
-        if (currentLevel === 'firstFloor') {
-            $('#go-downstairs').removeClass('d-none');
-        }
-    });
-});
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
