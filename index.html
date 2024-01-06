@@ -55,8 +55,7 @@
         </button>
     </div>
 </div>
-<div id="secondFloor" style="height:100vh;width:1100vw">
-  <div class="align-items-center d-flex h-100 justify-content-around rooms text-center w-100">
+<div class="d-flex" id="secondFloor" style="height:100vh;width:1100vw">
     <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="side-yard"><p>Side Yard</p></div>
     <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="front-yard"><p>Front Yard</p></div>
     <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="front-door"><p>Front Door</p></div>
@@ -68,27 +67,22 @@
     <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="stair-1b"><p>Stairs</p></div>
     <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="living-room"><p>Living Room</p></div>
     <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="deck"><p>Deck</p></div>
-  </div>
 </div>
-<div id="firstFloor" style="height:100vh;width:600vw">
-    <div class="align-items-center d-flex h-100 justify-content-around rooms text-center w-100">
+<div class="d-flex" id="firstFloor" style="height:100vh;width:600vw">
       <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="stair-1a"><p>Stairs</p></div>
       <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="basement"><p>Hallway</p></div>
       <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="basement-bath"><p>Bath</p></div>
       <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="mechanical"><p>Mechanical</p></div>
       <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="family-room"><p>Family</p></div>
       <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="backyard"><p>Backyard</p></div>
-    </div>
 </div>
-<div id="thirdFloor" style="height:100vh;width:600vw">
-    <div class="align-items-center d-flex h-100 justify-content-around rooms text-center w-100">
+<div class="d-flex" id="thirdFloor" style="height:100vh;width:600vw">
       <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="master-bath"><p>Master Bath</p></div>
       <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="master-bedroom"><p>Master Bedroom</p></div>
       <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="stair-2b"><p>Stairs</p></div>
       <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="upstairs"><p>Upstairs Hallway</p></div>
       <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="bedroom-2"><p>Bedroom 2</p></div>
       <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="bath-2"><p>Bath 2</p></div>
-    </div>
 </div>
 
 <script>
@@ -99,7 +93,7 @@ $(document).ready(function() {
 
     $('#left').click(function() {
         var currentRoom = $(location).attr('hash');
-        var currentLevel = $(currentRoom).parent().parent().attr('id');
+        var currentLevel = $(currentRoom).parent().attr('id');
         var roomLeft = '#' + $(currentRoom).prev().attr('id');
         $('#right').removeClass('d-none');
 
@@ -144,7 +138,7 @@ $(document).ready(function() {
     
     $('#right').click(function() {
         var currentRoom = $(location).attr('hash');
-        var currentLevel = $(currentRoom).parent().parent().attr('id');
+        var currentLevel = $(currentRoom).parent().attr('id');
         var roomRight = '#' + $(currentRoom).next().attr('id');
         $('#left').removeClass('d-none');
 
@@ -185,7 +179,7 @@ $(document).ready(function() {
 
     $('#down').click(function() {
         var currentRoom = $(location).attr('hash');
-        var currentLevel = $(currentRoom).parent().parent().attr('id');
+        var currentLevel = $(currentRoom).parent().attr('id');
 
         if (currentLevel === 'secondFloor') {
             location.replace('#stair-1a');
@@ -201,7 +195,7 @@ $(document).ready(function() {
 
     $('#up').click(function() {
         var currentRoom = $(location).attr('hash');
-        var currentLevel = $(currentRoom).parent().parent().attr('id');
+        var currentLevel = $(currentRoom).parent().attr('id');
 
         if (currentLevel === 'firstFloor') {
             location.replace('#stair-1b');
