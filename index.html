@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
+        .bg-image{background-position:center;background-repeat:no-repeat;background-size:auto 100%;}
         .h-5{height:5%;}
         .w-10{width:10%;}
         .w-100vw{width:100vw;}
@@ -39,7 +40,7 @@
     </button>
     <div class="d-flex position-fixed top-0 w-100">
         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                 Contact
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -77,12 +78,86 @@
       <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="backyard"><p>Backyard</p></div>
 </div>
 <div class="d-flex" id="thirdFloor" style="height:100vh;width:600vw">
-      <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="master-bath"><p>Master Bath</p></div>
-      <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="master-bedroom"><p>Master Bedroom</p></div>
-      <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="stair-2b"><p>Stairs</p></div>
-      <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="upstairs"><p>Upstairs Hallway</p></div>
-      <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="bedroom-2"><p>Bedroom 2</p></div>
-      <div class="align-items-center d-flex justify-content-center h-100 w-100vw" id="bath-2"><p>Bath 2</p></div>
+      <div class="align-items-end bg-image d-flex justify-content-center h-100 w-100vw" id="master-bath" style="background-image:url(img/master-bath.jpg)">
+          <div class="card">
+              <div class="card-body">
+                  <h5 class="card-title">Master Bath</h5>
+                  <p class="card-text">Glass enclosed show and great lighting.</p>
+              </div>
+          </div>
+      </div>
+      <div class="align-items-end bg-image d-flex justify-content-center h-100 w-100vw" id="master-bedroom" style="background-image:url(img/master-bedroom.jpg)">
+          <div class="card">
+              <div class="card-body">
+                  <h5 class="card-title">Master Bedroom</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Connects with the Master Bath</h6>
+                  <p class="card-text">Excellent size and wonderful window views!</p>
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#masterWindow1">
+                      Window View 1
+                  </button>
+                  <div class="modal fade" id="masterWindow1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered">
+                          <div class="border-0 modal-content">
+                              <div class="modal-header">
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body p-0">
+                                  <img class="img-fluid" src="img/window-1.jpg">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#masterWindow2">
+                      Window View 2
+                  </button>
+                  <div class="modal fade" id="masterWindow2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered">
+                          <div class="border-0 modal-content">
+                              <div class="modal-header">
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body p-0">
+                                  <img class="img-fluid" src="img/window-2.jpg">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="align-items-end bg-image d-flex justify-content-center h-100 w-100vw" id="stair-2b" style="background-image:url(img/stair-2b.jpg)">
+          <div class="card">
+              <div class="card-body">
+                  <h5 class="card-title">Stairs</h5>
+                  <p class="card-text">Two turn staircase.</p>
+              </div>
+          </div>
+      </div>
+      <div class="align-items-end bg-image d-flex justify-content-center h-100 w-100vw" id="upstairs" style="background-image:url(img/upstairs.jpg)">
+          <div class="card">
+              <div class="card-body">
+                  <h5 class="card-title">Upstairs Hallway</h5>
+                  <p class="card-text">Light Oak style laminate flooring.</p>
+                  <p class="card-text">Sliding door closet located on the left.</p>
+              </div>
+          </div>
+      </div>
+      <div class="align-items-end bg-image d-flex justify-content-center h-100 w-100vw" id="bedroom-2" style="background-image:url(img/bedroom-2.jpg)">
+          <div class="card">
+              <div class="card-body">
+                  <h5 class="card-title">Bedroom 2</h5>
+                  <p class="card-text"></p>
+              </div>
+          </div>
+          </p></div>
+      <div class="align-items-end bg-image d-flex justify-content-center h-100 w-100vw" id="bath-2" style="background-image:url(img/bath-2.jpg)">
+          <div class="card">
+              <div class="card-body">
+                  <h5 class="card-title">Bath 2</h5>
+                  <p class="card-text"></p>
+              </div>
+          </div>
+      </div>
 </div>
 
 <script>
