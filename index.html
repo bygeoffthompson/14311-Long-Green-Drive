@@ -15,15 +15,16 @@
         .dropdown.contact{left:.5rem;}
         .dropdown.details{right:.5rem;}
         .h-100vh,.slick-list,.slick-track{height:100vh!important;}
+        .floors>.slick-dots{flex-direction:column;height:100%;justify-content:center;left:1rem;padding:0;width:1rem;}
         .floors>.slick-next{bottom:0;left:0;position:absolute;width:100%;z-index:1;}
         .floors>.slick-prev{left:0;position:absolute;top:0;width:100%;z-index:1;}
         .rooms{bottom:1px;}
         .rooms>.slick-next{height:100%;position:absolute;right:0;top:0;width:.5rem;z-index:2;}
         .rooms>.slick-prev{height:100%;left:0;position:absolute;top:0;width:.5rem;z-index:1;}
         .slick-arrow{opacity:0;}
-        .slick-dots{bottom:1rem;display:flex;justify-content:space-around;left:0;list-style:none;margin:0;padding:0 5%;position:absolute;width:100%;}
-        .slick-dots button{background:#fefefe;border:0;border-radius:50%;height:.75rem;text-indent:99999vw;width:.75rem;}
-
+        .slick-active>button{background:red!important;}
+        .slick-dots{bottom:1rem;display:flex;height:1rem;justify-content:space-around;left:0;list-style:none;margin:0;padding:0 5%;position:absolute;width:100%;}
+        .slick-dots button{background:#fefefe;border:0;border-radius:50%;box-shadow:0 .125rem .25rem rgba(0,0,0,.075)!important;height:.75rem;text-indent:99999vw;width:.75rem;}
 
         @media(min-width:768px){
             .floors>.slick-arrow{height:1rem;}
@@ -63,8 +64,8 @@
 </div>
 
 <div class="floors">
-    <div class="h-100vh position-relative rooms">
-        <div class="align-items-end bg-image d-flex justify-content-center h-100 " id="master-bath" style="background-image:url(img/master-bath.jpg)">
+    <div class="h-100vh position-relative rooms second">
+        <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5" id="master-bath" style="background-image:url(img/master-bath.jpg)">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Master Bath</h5>
@@ -72,7 +73,7 @@
                 </div>
             </div>
         </div>
-        <div class="align-items-end bg-image d-flex justify-content-center h-100 " id="master-bedroom" style="background-image:url(img/master-bedroom.jpg)">
+        <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5" id="master-bedroom" style="background-image:url(img/master-bedroom.jpg)">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Master Bedroom</h5>
@@ -111,7 +112,7 @@
                 </div>
             </div>
         </div>
-        <div class="align-items-end bg-image d-flex justify-content-center h-100 " id="stair-2b" style="background-image:url(img/stair-2b.jpg)">
+        <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5" id="stair-2b" style="background-image:url(img/stair-2b.jpg)">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Stairs</h5>
@@ -119,7 +120,7 @@
                 </div>
             </div>
         </div>
-        <div class="align-items-end bg-image d-flex justify-content-center h-100 " id="upstairs" style="background-image:url(img/upstairs.jpg)">
+        <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5" id="upstairs" style="background-image:url(img/upstairs.jpg)">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Upstairs Hallway</h5>
@@ -128,7 +129,7 @@
                 </div>
             </div>
         </div>
-        <div class="align-items-end bg-image d-flex justify-content-center h-100 " id="bedroom-2" style="background-image:url(img/bedroom-2.jpg)">
+        <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5" id="bedroom-2" style="background-image:url(img/bedroom-2.jpg)">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Bedroom 2</h5>
@@ -136,7 +137,7 @@
                 </div>
             </div>
             </p></div>
-        <div class="align-items-end bg-image d-flex justify-content-center h-100 " id="bath-2" style="background-image:url(img/bath-2.jpg)">
+        <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5" id="bath-2" style="background-image:url(img/bath-2.jpg)">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Bath 2</h5>
@@ -145,7 +146,8 @@
             </div>
         </div>
     </div>
-    <div class="h-100vh position-relative rooms">
+    <div class="h-100vh position-relative rooms first">
+        <div class="align-items-center d-flex justify-content-center h-100"><p>Front Yard</p></div>
         <div class="align-items-center d-flex justify-content-center h-100"><p>Front Door</p></div>
         <div class="align-items-center d-flex justify-content-center h-100"><p>Entry</p></div>
         <div class="align-items-center d-flex justify-content-center h-100"><p>Water Closet</p></div>
@@ -155,26 +157,26 @@
         <div class="align-items-center d-flex justify-content-center h-100"><p>Stairs</p></div>
         <div class="align-items-center d-flex justify-content-center h-100"><p>Living Room</p></div>
         <div class="align-items-center d-flex justify-content-center h-100"><p>Deck</p></div>
-        <div class="align-items-center d-flex justify-content-center h-100"><p>Side Yard</p></div>
-        <div class="align-items-center d-flex justify-content-center h-100"><p>Front Yard</p></div>
     </div>
-    <div class="h-100vh position-relative rooms">
+    <div class="h-100vh position-relative rooms basement">
         <div class="align-items-center d-flex justify-content-center h-100"><p>Stairs</p></div>
         <div class="align-items-center d-flex justify-content-center h-100"><p>Hallway</p></div>
         <div class="align-items-center d-flex justify-content-center h-100"><p>Bath</p></div>
         <div class="align-items-center d-flex justify-content-center h-100"><p>Mechanical</p></div>
         <div class="align-items-center d-flex justify-content-center h-100"><p>Family</p></div>
         <div class="align-items-center d-flex justify-content-center h-100"><p>Backyard</p></div>
+        <div class="align-items-center d-flex justify-content-center h-100"><p>Side Yard</p></div>
     </div>
 
 </div>
 
 <script>
-    $(document).ready(function(){
+    $(document).ready(function() {
         $('.rooms').slick({
             dots: true
         });
         $('.floors').slick({
+            dots: true,
             infinite: false,
             initialSlide: 1,
             touchMove: false,
