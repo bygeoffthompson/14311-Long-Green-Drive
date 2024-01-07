@@ -13,6 +13,11 @@
         .bg-image{background-position:center;background-repeat:no-repeat;background-size:auto 100%;}
         @media(min-width:1200px){.bg-image{background-size:100%;}}
         .h-100vh,.slick-list,.slick-track{height:100vh!important;}
+        .floors>.slick-next{bottom:0;left:0;position:absolute;width:100%;z-index:1;}
+        .floors>.slick-prev{left:0;position:absolute;top:0;width:100%;z-index:1;}
+        .rooms>.slick-next{height:100%;position:absolute;right:0;top:0;width:30px;z-index:2;}
+        .rooms>.slick-prev{height:100%;left:0;position:absolute;top:0;width:30px;z-index:1;}
+        .slick-arrow{opacity:0;}
     </style>
 </head>
 <body class="overflow-hidden">
@@ -20,8 +25,27 @@
     <h1>14311 Long Green Drive Silver Spring, MD 20906</h1>
 </div>
 
+<div class="dropdown start-0 position-fixed top-0" style="z-index:3;">
+    <button class="btn btn-danger dropdown-toggle" type="button" id="contactMenu" data-bs-toggle="dropdown" aria-expanded="false">
+        Contact Us
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="contactMenu">
+        <li><a class="dropdown-item" href="tel:1234567890">Call</a></li>
+        <li><a class="dropdown-item" href="mailto:a@a.a">Email</a></li>
+        <li><a class="dropdown-item" href="#">Schedule a Tour</a></li>
+    </ul>
+</div>
+<div class="dropdown end-0 position-fixed top-0" style="z-index:3;">
+    <button class="btn btn-warning dropdown-toggle" type="button" id="detailsMenu" data-bs-toggle="dropdown" aria-expanded="false">
+        Details
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="detailsMenu">
+        <li><a class="dropdown-item" href="#">Link</a></li>
+    </ul>
+</div>
+
 <div class="floors">
-    <div class="h-100vh rooms">
+    <div class="h-100vh position-relative rooms">
         <div class="align-items-end bg-image d-flex justify-content-center h-100 " id="master-bath" style="background-image:url(img/master-bath.jpg)">
             <div class="card">
                 <div class="card-body">
@@ -103,7 +127,7 @@
             </div>
         </div>
     </div>
-    <div class="activeFloor h-100vh rooms">
+    <div class="h-100vh position-relative rooms">
         <div class="align-items-center d-flex justify-content-center h-100"><p>Front Door</p></div>
         <div class="align-items-center d-flex justify-content-center h-100"><p>Entry</p></div>
         <div class="align-items-center d-flex justify-content-center h-100"><p>Water Closet</p></div>
@@ -116,7 +140,7 @@
         <div class="align-items-center d-flex justify-content-center h-100"><p>Side Yard</p></div>
         <div class="align-items-center d-flex justify-content-center h-100"><p>Front Yard</p></div>
     </div>
-    <div class="h-100vh rooms">
+    <div class="h-100vh position-relative rooms">
         <div class="align-items-center d-flex justify-content-center h-100"><p>Stairs</p></div>
         <div class="align-items-center d-flex justify-content-center h-100"><p>Hallway</p></div>
         <div class="align-items-center d-flex justify-content-center h-100"><p>Bath</p></div>
@@ -129,17 +153,22 @@
 
 <script>
     $(document).ready(function(){
-        $('.rooms').slick({
-            arrows: false
-        });
+        $('.rooms').slick();
         $('.floors').slick({
-            arrows: false,
             infinite: false,
             initialSlide: 1,
             touchMove: false,
             vertical: true,
             verticalSwiping: true
         });
+        $('.rooms').on('wheel', (function(e) {
+            e.preventDefault();
+            if (e.originalEvent.deltaY > 0) {
+                $(this).slick('slickNext');
+            } else {
+                $(this).slick('slickPrev');
+            }
+        }));
     });
 </script>
 
