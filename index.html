@@ -11,13 +11,31 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <style>
         .bg-image{background-position:center;background-repeat:no-repeat;background-size:auto 100%;}
-        @media(min-width:1200px){.bg-image{background-size:100%;}}
+        .dropdown{top:.5rem;}
+        .dropdown.contact{left:.5rem;}
+        .dropdown.details{right:.5rem;}
         .h-100vh,.slick-list,.slick-track{height:100vh!important;}
         .floors>.slick-next{bottom:0;left:0;position:absolute;width:100%;z-index:1;}
         .floors>.slick-prev{left:0;position:absolute;top:0;width:100%;z-index:1;}
-        .rooms>.slick-next{height:100%;position:absolute;right:0;top:0;width:30px;z-index:2;}
-        .rooms>.slick-prev{height:100%;left:0;position:absolute;top:0;width:30px;z-index:1;}
+        .rooms{bottom:1px;}
+        .rooms>.slick-next{height:100%;position:absolute;right:0;top:0;width:.5rem;z-index:2;}
+        .rooms>.slick-prev{height:100%;left:0;position:absolute;top:0;width:.5rem;z-index:1;}
         .slick-arrow{opacity:0;}
+        .slick-dots{bottom:1rem;display:flex;justify-content:space-around;left:0;list-style:none;margin:0;padding:0 5%;position:absolute;width:100%;}
+        .slick-dots button{background:#fefefe;border:0;border-radius:50%;height:.75rem;text-indent:99999vw;width:.75rem;}
+
+
+        @media(min-width:768px){
+            .floors>.slick-arrow{height:1rem;}
+            .rooms>.slick-arrow{width:1rem;}
+            .dropdown{top:1rem;}
+            .dropdown.contact{left:1rem;}
+            .dropdown.details{right:1rem;}
+        }
+
+        @media(min-width:1200px){
+            .bg-image{background-size:100%;}
+        }
     </style>
 </head>
 <body class="overflow-hidden">
@@ -25,7 +43,7 @@
     <h1>14311 Long Green Drive Silver Spring, MD 20906</h1>
 </div>
 
-<div class="dropdown start-0 position-fixed top-0" style="z-index:3;">
+<div class="contact dropdown position-fixed" style="z-index:3;">
     <button class="btn btn-danger dropdown-toggle" type="button" id="contactMenu" data-bs-toggle="dropdown" aria-expanded="false">
         Contact Us
     </button>
@@ -35,7 +53,7 @@
         <li><a class="dropdown-item" href="#">Schedule a Tour</a></li>
     </ul>
 </div>
-<div class="dropdown end-0 position-fixed top-0" style="z-index:3;">
+<div class="details dropdown position-fixed" style="z-index:3;">
     <button class="btn btn-warning dropdown-toggle" type="button" id="detailsMenu" data-bs-toggle="dropdown" aria-expanded="false">
         Details
     </button>
@@ -153,7 +171,9 @@
 
 <script>
     $(document).ready(function(){
-        $('.rooms').slick();
+        $('.rooms').slick({
+            dots: true
+        });
         $('.floors').slick({
             infinite: false,
             initialSlide: 1,
