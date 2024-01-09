@@ -15,7 +15,13 @@
         .dropdown{top:1rem;}
         .dropdown.contact{left:1rem;}
         .dropdown.details{right:1rem;}
-        .elevator{height:64px;left:1px;position:absolute;top:50%;transform:translateY(-50%);width:12px;}
+        .elevator{height:64px;left:3px;position:absolute;top:50%;transform:translateY(-50%);width:1rem;}
+        .elevator li{position:relative;}
+        .elevator li:before{bottom:10px;color:#fff;font-size:10px;left:3px;position:absolute;}
+        .elevator li:nth-child(1) button{background-color:#fff;background-image:url('img/info.svg');background-position:center;}
+        .elevator li:nth-child(2):before{content:'2';}
+        .elevator li:nth-child(3):before{bottom:10px;content:'1';left:4px;}
+        .elevator li:nth-child(4):before{bottom:9px;content:'B';left:4px;}
         .h-100vh,.slick-list,.slick-track{height:100vh!important;}
         .floors>.slick-dots{left:0;top:50%;translate:transformY(-50%);}
         .floors>.slick-dots li{height:12px;}
@@ -70,6 +76,11 @@
 </div>
 
 <div class="floors">
+    <div class="h-100vh position-relative rooms info">
+        <div class="align-items-center d-flex justify-content-center h-100 w-100">
+            <h1>14311 Long Green Drive | Silver Spring, MD 20906</h1>
+        </div>
+    </div>
     <div class="h-100vh position-relative rooms second">
         <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5" style="background-image:url(img/master-bath.jpg)">
             <div class="card">
@@ -314,7 +325,7 @@
             appendDots: $('.elevator'),
             dots: true,
             infinite: false,
-            initialSlide: 1,
+            initialSlide: 2,
             touchMove: false,
             vertical: true,
             verticalSwiping: true
@@ -339,7 +350,7 @@
     });
 
     $('.floors > .slick-prev').click(function(){
-        if ($('.second').hasClass('slick-active')) {
+        if ($('.info').hasClass('slick-active')) {
             $(this).addClass('d-none');
         }
 
