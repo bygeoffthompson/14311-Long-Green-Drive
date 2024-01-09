@@ -11,30 +11,31 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <style>
         .bg-image{background-position:center;background-repeat:no-repeat;background-size:auto 100%;}
-        .dropdown{top:.5rem;}
-        .dropdown.contact{left:.5rem;}
-        .dropdown.details{right:.5rem;}
+        .card{width:calc(100% - 2rem);}
+        .dropdown{top:1rem;}
+        .dropdown.contact{left:1rem;}
+        .dropdown.details{right:1rem;}
+        .elevator{height:64px;left:1px;position:absolute;top:50%;transform:translateY(-50%);width:12px;}
         .h-100vh,.slick-list,.slick-track{height:100vh!important;}
         .floors>.slick-dots{left:0;top:50%;translate:transformY(-50%);}
         .floors>.slick-dots li{height:12px;}
-        .floors>.slick-next{bottom:0;left:0;position:absolute;width:100%;z-index:1;}
-        .floors>.slick-prev{left:0;position:absolute;top:0;width:100%;z-index:1;}
+        .floors>.slick-next{bottom:0;left:0;width:100%;}
+        .floors>.slick-prev{height:1rem;left:0;top:0;width:100%;}
         .rooms{bottom:1px;}
         .rooms>.slick-dots{bottom:0;display:flex;height:12px;position:absolute;left:50%;transform:translateX(-50%);}
-        .rooms>.slick-next{height:100%;position:absolute;right:0;top:0;width:.5rem;z-index:2;}
-        .rooms>.slick-prev{height:100%;left:0;position:absolute;top:0;width:.5rem;z-index:1;}
-        .slick-arrow{opacity:0;}
-        .slick-active>button{background:red!important;}
+        .rooms>.slick-next{height:100%;right:-1px;top:0;width:1rem;}
+        .rooms>.slick-prev{height:100%;left:-1px;top:0;width:1rem;}
+        .slick-arrow{border:0;margin:0;opacity:0;padding:0;position:absolute;text-indent:99999vw;z-index:1;}
         .slick-dots{list-style:none;margin:0;padding:0;position:absolute;width:auto;}
-        .slick-dots button{background:#fefefe;border:0;border-radius:50%;box-shadow:0 .125rem .25rem rgba(0,0,0,.075)!important;height:.75rem;text-indent:99999vw;width:.75rem;}
-        .elevator{height:62px;left:0;position:absolute;top:50%;transform:translateY(-50%);width:12px;}
+        .slick-dots button{background:#fefefe;border:0;border-radius:50%;box-shadow:0 .125rem .25rem rgba(0,0,0,.075)!important;height:14px;text-indent:99999vw;width:14px;}
+
+        @media(min-width:576px) {
+            .card{width:50%;}
+        }
 
         @media(min-width:768px) {
             .floors>.slick-arrow{height:1rem;}
             .rooms>.slick-arrow{width:1rem;}
-            .dropdown{top:1rem;}
-            .dropdown.contact{left:1rem;}
-            .dropdown.details{right:1rem;}
         }
 
         @media(min-width:1200px) {
@@ -59,7 +60,7 @@
 </div>
 <div class="details dropdown position-fixed" style="z-index:3;">
     <button class="btn btn-warning dropdown-toggle" type="button" id="detailsMenu" data-bs-toggle="dropdown" aria-expanded="false">
-        Details
+        Property Details
     </button>
     <ul class="dropdown-menu" aria-labelledby="detailsMenu">
         <li><a class="dropdown-item" href="#">Link</a></li>
@@ -71,7 +72,7 @@
         <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5" style="background-image:url(img/master-bath.jpg)">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Master Bath</h5>
+                    <div class="card-title h4">Master Bath</div>
                     <p class="card-text">Glass enclosed show and great lighting.</p>
                 </div>
             </div>
@@ -79,7 +80,7 @@
         <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5" style="background-image:url(img/master-bedroom.jpg)">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Master Bedroom</h5>
+                    <div class="card-title h4">Master Bedroom</div>
                     <h6 class="card-subtitle mb-2 text-muted">Connects with the Master Bath</h6>
                     <p class="card-text">Excellent size and wonderful window views!</p>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#masterWindow1">
@@ -118,7 +119,7 @@
         <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5" style="background-image:url(img/stair-2b.jpg)">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Stairs</h5>
+                    <div class="card-title h4">Stairs</div>
                     <p class="card-text">Two turn staircase.</p>
                 </div>
             </div>
@@ -126,7 +127,7 @@
         <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5" style="background-image:url(img/upstairs.jpg)">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Upstairs Hallway</h5>
+                    <div class="card-title h4">Upstairs Hallway</div>
                     <p class="card-text">Light Oak style laminate flooring.</p>
                     <p class="card-text">Sliding door closet located on the left.</p>
                 </div>
@@ -135,7 +136,7 @@
         <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5" style="background-image:url(img/bedroom-2.jpg)">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Bedroom 2</h5>
+                    <div class="card-title h4">Bedroom 2</div>
                     <p class="card-text"></p>
                 </div>
             </div>
@@ -143,7 +144,7 @@
         <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5" style="background-image:url(img/bath-2.jpg)">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Bath 2</h5>
+                    <div class="card-title h4">Bath 2</div>
                     <p class="card-text"></p>
                 </div>
             </div>
@@ -153,7 +154,7 @@
         <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Front Yard</h5>
+                    <div class="card-title h4">Front Yard</div>
                     <p class="card-text"></p>
                 </div>
             </div>
@@ -161,7 +162,7 @@
         <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Front Door</h5>
+                    <div class="card-title h4">Front Door</div>
                     <p class="card-text"></p>
                 </div>
             </div>
@@ -169,7 +170,7 @@
         <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Entry</h5>
+                    <div class="card-title h4">Entry</div>
                     <p class="card-text"></p>
                 </div>
             </div>
@@ -177,7 +178,7 @@
         <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Water Closet</h5>
+                    <div class="card-title h4">Water Closet</div>
                     <p class="card-text"></p>
                 </div>
             </div>
@@ -185,7 +186,7 @@
         <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Kitchen</h5>
+                    <div class="card-title h4">Kitchen</div>
                     <p class="card-text"></p>
                 </div>
             </div>
@@ -193,7 +194,7 @@
         <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Stairs Up</h5>
+                    <div class="card-title h4">Stairs Up</div>
                     <p class="card-text"></p>
                 </div>
             </div>
@@ -201,7 +202,7 @@
         <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Dining Room</h5>
+                    <div class="card-title h4">Dining Room</div>
                     <p class="card-text"></p>
                 </div>
             </div>
@@ -209,7 +210,7 @@
         <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Stairs Down</h5>
+                    <div class="card-title h4">Stairs Down</div>
                     <p class="card-text"></p>
                 </div>
             </div>
@@ -217,7 +218,7 @@
         <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Living Room</h5>
+                    <div class="card-title h4">Living Room</div>
                     <p class="card-text"></p>
                 </div>
             </div>
@@ -225,7 +226,7 @@
         <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Deck</h5>
+                    <div class="card-title h4">Deck</div>
                     <p class="card-text"></p>
                 </div>
             </div>
@@ -235,7 +236,7 @@
         <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Stairs Up</h5>
+                    <div class="card-title h4">Stairs Up</div>
                     <p class="card-text"></p>
                 </div>
             </div>
@@ -243,7 +244,7 @@
         <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Hallway</h5>
+                    <div class="card-title h4">Hallway</div>
                     <p class="card-text"></p>
                 </div>
             </div>
@@ -251,7 +252,7 @@
         <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Bath</h5>
+                    <div class="card-title h4">Bath</div>
                     <p class="card-text"></p>
                 </div>
             </div>
@@ -259,7 +260,7 @@
         <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Mechanical</h5>
+                    <div class="card-title h4">Mechanical</div>
                     <p class="card-text"></p>
                 </div>
             </div>
@@ -267,7 +268,7 @@
         <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Finished Room</h5>
+                    <div class="card-title h4">Finished Room</div>
                     <p class="card-text"></p>
                 </div>
             </div>
@@ -275,7 +276,7 @@
         <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Backyard</h5>
+                    <div class="card-title h4">Backyard</div>
                     <p class="card-text"></p>
                 </div>
             </div>
@@ -283,7 +284,7 @@
         <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Side Yard</h5>
+                    <div class="card-title h4">Side Yard</div>
                     <p class="card-text"></p>
                 </div>
             </div>
@@ -295,7 +296,16 @@
 
 <script>
     $(document).ready(function() {
-        $('.rooms').slick({
+        $('.second').slick({
+            //appendDots: $('.secondNav'),
+            dots: true
+        });
+        $('.first').slick({
+            //appendDots: $('.firstNav'),
+            dots: true
+        });
+        $('.basement').slick({
+            //appendDots: $('.basementNav'),
             dots: true
         });
         $('.floors').slick({
