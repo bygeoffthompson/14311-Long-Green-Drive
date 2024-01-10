@@ -29,6 +29,8 @@
         .floors>.slick-prev{height:1rem;left:0;top:0;width:100%;}
         .h-100vh,.slick-list,.slick-track{height:100vh!important;}
         #home{background:transparent;border:0;left:50%;position:absolute;transform:translateX(-50%);top:16px;z-index:3;}
+        .room img{display:none;height:100%;width:100%;}
+        .room img.active{display:block;}
         .rooms{bottom:1px;}
         .rooms>.slick-dots{bottom:1rem;display:flex;height:14px;position:absolute;left:50%;transform:translateX(-50%);z-index:9;}
         .rooms>.slick-dots li{margin-right:6px;}
@@ -255,12 +257,17 @@
             </div>
         </div>
         <div class="h-100">
-            <div class="align-items-end bg-3 bg-image d-flex justify-content-center h-100 pb-5 w-100" style="background-image:url(img/living-room-1.jpg);">
-                <div class="card">
+            <div class="align-items-end d-flex justify-content-center h-100 position-relative room w-100">
+                <div class="bottom-0 h-100 position-absolute start-0 w-100">
+                    <img alt="Living Room 1" class="active" src="img/living-room-1.jpg">
+                    <img alt="Living Room 2" src="img/living-room-2.jpg">
+                    <img alt="Living Room 3" src="img/living-room-3.jpg">
+                </div>
+                <div class="card mb-5">
                     <div class="card-body text-center">
                         <div class="align-items-center card-title d-flex justify-content-center">
                             <h3 class="mb-0">Living Room</h3>
-                            <button type="button" class="bg-rotate btn ms-2 px-2 py-0">
+                            <button type="button" class="room-rotate btn ms-2 px-2 py-0">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2z"/>
                                     <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466"/>
@@ -396,48 +403,14 @@
         $('.floors').slick('slickGoTo', 0, true);
     });
 
-    $('.bg-2 .bg-rotate').click(function() {
-        var bgi = $(this).parents('.bg-2').attr('style');
+    $('.room-rotate').click(function() {
+        var $room = $(this).parents('.room');
 
-        if (bgi.indexOf("1") >= 0) {
-            var bg2 = bgi.replace('1', '2');
-            $('.bg-2').attr('style', bg2);
+        if ($room.find('.active').next().is('img')) {
+            $room.find('.active').toggleClass('active').next().toggleClass('active');
         } else {
-            var bg1 = bgi.replace('2', '1');
-            $('.bg-2').attr('style', bg1);
-        }
-    });
-
-    $('.bg-3 .bg-rotate').click(function() {
-        var bgi = $(this).parents('.bg-3').attr('style');
-
-        if (bgi.indexOf("1") >= 0) {
-            var bg2 = bgi.replace('1', '2');
-            $('.bg-3').attr('style', bg2);
-        } else if (bgi.indexOf("2") >= 0) {
-            var bg3 = bgi.replace('2', '3');
-            $('.bg-3').attr('style', bg3);
-        } else {
-            var bg1 = bgi.replace('3', '1');
-            $('.bg-3').attr('style', bg1);
-        }
-    });
-
-    $('.bg-4 .bg-rotate').click(function() {
-        var bgi = $(this).parents('.bg-4').attr('style');
-
-        if (bgi.indexOf("1") >= 0) {
-            var bg2 = bgi.replace('1', '2');
-            $('.bg-4').attr('style', bg2);
-        } else if (bgi.indexOf("2") >= 0) {
-            var bg3 = bgi.replace('2', '3');
-            $('.bg-4').attr('style', bg3);
-        } else if (bgi.indexOf("3") >= 0) {
-            var bg4 = bgi.replace('3', '4');
-            $('.bg-4').attr('style', bg4);
-        } else {
-            var bg1 = bgi.replace('4', '1');
-            $('.bg-4').attr('style', bg1);
+            $room.find('.active').toggleClass('active')
+            $room.find('img:first-of-type').toggleClass('active');
         }
     });
 });
