@@ -38,13 +38,13 @@
         .slick-dots button{background:#fefefe;border:0;border-radius:50%;box-shadow:0 .125rem .25rem rgba(0,0,0,.075)!important;height:1rem;margin:0;padding:0;text-indent:99999vw;width:1rem;}
         .slick-active > button{background-color:transparent;background-image:url('img/star.svg');background-position:center;}
         .slick-slide{overflow:hidden;}
-        .y-scroll{overflow-y:scroll;}
 
         @media(min-width:576px) {
             .card{width:50%;}
         }
 
         @media(min-width:768px) {
+            .btn-grow{border-radius:.25rem!important;padding:.375rem .75rem!important;font-size:1rem!important;}
             .controls{left:1rem;top:1rem;width:calc(100% - 2rem);}
             .floors>.slick-arrow{height:1rem;}
             .room img{height:auto;width:100vw;}
@@ -57,7 +57,7 @@
 
 <div class="align-items-center controls d-flex justify-content-between position-fixed">
     <div class="contact dropdown shadow-sm" style="z-index:3;">
-        <button class="btn btn-danger dropdown-toggle" type="button" id="contactMenu" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-danger btn-grow btn-sm dropdown-toggle" type="button" id="contactMenu" data-bs-toggle="dropdown" aria-expanded="false">
             Rent It
         </button>
         <ul class="dropdown-menu" aria-labelledby="contactMenu">
@@ -66,17 +66,8 @@
         </ul>
     </div>
 
-    <div id="home">
-        <button class="bg-transparent border-0 btn btn-light">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#333333" class="bi bi-house-fill" viewBox="0 0 16 16">
-                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
-                <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
-             </svg>
-         </button>
-    </div>
-
     <div class="details dropdown shadow-sm" style="z-index:3;">
-        <button class="btn btn-warning dropdown-toggle" type="button" id="detailsMenu" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-grow btn-sm btn-warning dropdown-toggle" type="button" id="detailsMenu" data-bs-toggle="dropdown" aria-expanded="false">
             Contact Us
         </button>
         <ul class="dropdown-menu" aria-labelledby="detailsMenu">
@@ -93,27 +84,28 @@
         </div>
     </div>
     <div class="h-100vh position-relative rooms property text-light">
-        <div class="align-items-center d-flex flex-column h-100 justify-content-start py-5 text-center y-scroll">
+        <div class="align-items-center d-flex flex-column h-100 justify-content-start py-5 text-center">
             <h1>14311 Long Green Drive<br><span class="h2">Silver Spring, MD 20906</span></h1>
             <div class="h4 text-center">For Sale</div>
-            <div class="d-flex mb-3">
+            <div class="d-flex mb-1">
                 <button type="button" class="btn btn-success disabled">$499,000</button>
             </div>
-            <div class="d-flex mb-3">
+            <div class="d-flex mb-1">
                 <button type="button" class="btn btn-secondary disabled me-1">Townhouse</button>
                 <button type="button" class="btn btn-danger disabled me-1">Corner Unit</button>
                 <button type="button" class="btn btn-secondary disabled">1983</button>
             </div>
             <div class="h4 text-center">Size</div>
-            <div class="d-flex mb-3">
+            <div class="d-flex mb-1">
                 <button type="button" class="btn btn-light disabled me-1">3 Bedroom</button>
                 <button type="button" class="btn btn-light disabled me-1">3.5 Bath</button>
+                </div>
+            <div class="d-flex mb-1">
                 <button type="button" class="btn btn-light disabled me-1">1,902 Sq Ft</button>
                 <button type="button" class="btn btn-light disabled">2,399 Sq Ft Lot</button>
             </div>
-            <div class="d-flex mb-3">
-                <button type="button" class="btn btn-dark disabled">Montgomery County Public Schools</button>
-            </div>
+        </div>
+        <div class="align-items-center d-flex flex-column h-100 justify-content-start py-5 text-center">
             <div class="h4 text-center">Services</div>
             <div class="d-flex mb-3">
                 <button type="button" class="btn btn-dark disabled me-1">Pepco</button>
@@ -500,11 +492,6 @@
             }
 
             $('.slick-next').removeClass('d-none');
-        });
-
-        $('#home').click(function(){
-            $('.floors').slick('slickGoTo', 1, true);
-            $('.property').slick('slickGoTo', 0, true);
         });
 
         $('.room-rotate').click(function() {
