@@ -11,23 +11,20 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <style>
         .card{width:calc(100% - 2rem);}
-        .dropdown{top:1rem;}
-        .dropdown.contact{left:1rem;}
-        .dropdown.details{right:1rem;}
+        .controls{left:1rem;top:1rem;width:calc(100% - 2rem);z-index:4;}
         .elevator{height:64px;left:3px;position:absolute;top:50%;transform:translateY(-50%);width:1rem;}
         .elevator li{position:relative;}
         .elevator li:before{bottom:9px;color:#fff;font-size:10px;left:4.5px;position:absolute;}
-        .elevator li:nth-child(1) button{background-color:#fff;background-image:url('img/info.svg');background-position:center;}
-        .elevator li.slick-active:nth-child(1) button{background-image:url('img/info-red.svg');}
-        .elevator li:nth-child(2):before{content:'2';}
-        .elevator li:nth-child(3):before{bottom:9px;content:'1';left:5px;}
-        .elevator li:nth-child(4):before{bottom:8px;content:'B';left:4.5px;}
+        .elevator li:nth-child(2) button{background-color:#fff;background-image:url('img/info.svg');background-position:center;}
+        .elevator li.slick-active:nth-child(2) button{background-image:url('img/info-red.svg');}
+        .elevator li:nth-child(3):before{content:'2';}
+        .elevator li:nth-child(4):before{bottom:9px;content:'1';left:5px;}
+        .elevator li:nth-child(5):before{bottom:8px;content:'B';left:4.5px;}
         .floors>.slick-dots{left:0;top:50%;translate:transformY(-50%);}
         .floors>.slick-dots li{height:12px;}
         .floors>.slick-next{bottom:0;height:1rem;left:0;width:100%;}
         .floors>.slick-prev{height:1rem;left:0;top:0;width:100%;}
         .h-100vh,.slick-list,.slick-track{height:100vh!important;}
-        #home{background:transparent;border:0;left:50%;position:absolute;transform:translateX(-50%);top:16px;z-index:3;}
         .room img{display:none;height:100%;left:50%;position:absolute;top:50%;transform:translate(-50%,-50%);width:auto;}
         .room img.active{display:block;}
         .rooms{bottom:1px;}
@@ -54,43 +51,50 @@
 </head>
 <body class="overflow-hidden">
 
-<div class="contact dropdown position-fixed shadow-sm" style="z-index:3;">
-    <button class="btn btn-danger dropdown-toggle" type="button" id="contactMenu" data-bs-toggle="dropdown" aria-expanded="false">
-        Rent It
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="contactMenu">
-        <li><a class="dropdown-item" href="https://airbnb.com" target="_blank">Airbnb</a></li>
-        <li><a class="dropdown-item" href="https://vrbo.com" target="_blank">Vrbo</a></li>
-    </ul>
-</div>
+<div class="align-items-center controls d-flex justify-content-between position-fixed">
+    <div class="contact dropdown shadow-sm" style="z-index:3;">
+        <button class="btn btn-danger dropdown-toggle" type="button" id="contactMenu" data-bs-toggle="dropdown" aria-expanded="false">
+            Rent It
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="contactMenu">
+            <li><a class="dropdown-item" href="https://airbnb.com" target="_blank">Airbnb</a></li>
+            <li><a class="dropdown-item" href="https://vrbo.com" target="_blank">Vrbo</a></li>
+        </ul>
+    </div>
 
-<div id="home">
-    <button class="bg-transparent border-0 btn btn-light">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#333333" class="bi bi-house-fill" viewBox="0 0 16 16">
-            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
-            <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
-         </svg>
-    </button>
-</div>
+    <div id="home">
+        <button class="bg-transparent border-0 btn btn-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#333333" class="bi bi-house-fill" viewBox="0 0 16 16">
+                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+                <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+             </svg>
+         </button>
+    </div>
 
-<div class="details dropdown position-fixed shadow-sm" style="z-index:3;">
-    <button class="btn btn-warning dropdown-toggle" type="button" id="detailsMenu" data-bs-toggle="dropdown" aria-expanded="false">
-        Contact Us
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="detailsMenu">
-        <li><a class="dropdown-item" href="tel:1234567890">Call Us</a></li>
-        <li><a class="dropdown-item" href="mailto:a@a.a">Email Us</a></li>
-    </ul>
+    <div class="details dropdown shadow-sm" style="z-index:3;">
+        <button class="btn btn-warning dropdown-toggle" type="button" id="detailsMenu" data-bs-toggle="dropdown" aria-expanded="false">
+            Contact Us
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="detailsMenu">
+            <li><a class="dropdown-item" href="tel:1234567890">Call</a></li>
+             <li><a class="dropdown-item" href="mailto:a@a.a">Email</a></li>
+        </ul>
+    </div>
 </div>
 
 <div class="floors">
-    <div class="h-100vh position-relative rooms info">
-        <div class="align-items-center d-flex flex-column h-100 justify-content-center text-center w-100">
+    <div class="h-100vh position-relative rooms form">
+        <div class="align-items-center d-flex flex-column h-100 justify-content-center pt-5 text-center w-100">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfp2QdCa6UaJNhrLwCYaius775cnbBs9YBStdqD3_Nzm42Lbg/viewform?embedded=true" width="640" height="1423" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+    </div>
+    <div class="h-100vh position-relative rooms property">
+        <div class="align-items-center d-flex flex-column h-100 justify-content-center text-center">
             <h1>14311 Long Green Drive<br><span class="h2">Silver Spring, MD 20906</span></h1>
+            <div class="h4 text-center">For Sale</div>
             <div class="d-flex mb-3">
                 <button type="button" class="btn btn-success disabled">$499,000</button>
             </div>
-            <div class="h4 text-center">Details</div>
             <div class="d-flex mb-3">
                 <button type="button" class="btn btn-secondary disabled me-1">Townhouse</button>
                 <button type="button" class="btn btn-danger disabled me-1">Corner Unit</button>
@@ -104,19 +108,25 @@
                 <button type="button" class="btn btn-light disabled">2,399 Sq Ft Lot</button>
             </div>
             <div class="d-flex mb-3">
-                <button type="button" class="btn btn-dark disabled me-1">1 Parking Space</button>
-                <button type="button" class="btn btn-warning disabled">$115 HOA</button>
+                <button type="button" class="btn btn-dark disabled">Montgomery County Public Schools</button>
             </div>
             <div class="h4 text-center">Services</div>
             <div class="d-flex mb-3">
+                <button type="button" class="btn btn-dark disabled me-1">Pepco</button>
                 <button type="button" class="btn btn-warning disabled me-1">Verizon Fios</button>
+                <button type="button" class="btn btn-light disabled me-1">WSSC</button>
                 <button type="button" class="btn btn-primary disabled">Washington Gas</button>
+            </div>
+        </div>
+        <div class="align-items-center d-flex h-100 justify-content-center pt-3">
+            <div class="h-100 px-3 py-5 w-100">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3096.722101783605!2d-77.03265042489227!3d39.0900272716835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7cfe1d6eb77dd%3A0x5e747d760b61e70f!2s14311%20Long%20Green%20Dr%2C%20Silver%20Spring%2C%20MD%2020906!5e0!3m2!1sen!2sus!4v1704939258870!5m2!1sen!2sus" style="border:0;height:100%;width:100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </div>
     <div class="h-100vh position-relative rooms second">
         <div class="h-100">
-            <div class="align-items-end d-flex justify-content-center h-100 position-relative room w-100">
+            <div class="align-items-end d-flex justify-content-center h-100 position-relative room">
                 <div class="bottom-0 h-100 position-absolute start-0 w-100">
                     <img alt="Master Bath" aria-hidden="false" class="active" data-lazy="img/master-bath.jpg">
                 </div>
@@ -446,6 +456,10 @@
 
 <script>
     $(document).ready(function() {
+        $('.property').slick({
+            appendDots: $('.property'),
+            dots: true
+        });
         $('.second').slick({
             appendDots: $('.second'),
             dots: true
@@ -462,11 +476,43 @@
             appendDots: $('.elevator'),
             dots: true,
             infinite: false,
-            initialSlide: 2,
+            initialSlide: 3,
             touchMove: false,
             vertical: true,
             verticalSwiping: true
         });
+
+        $('.floors > .slick-next').click(function(){
+            if ($('.basement').hasClass('slick-active')) {
+                $(this).addClass('d-none');
+            }
+
+            $('.slick-prev').removeClass('d-none');
+        });
+
+        $('.floors > .slick-prev').click(function(){
+            if ($('.form').hasClass('slick-active')) {
+                $(this).addClass('d-none');
+            }
+
+            $('.slick-next').removeClass('d-none');
+        });
+
+        $('#home').click(function(){
+            $('.floors').slick('slickGoTo', 1, true);
+            $('.property').slick('slickGoTo', 0, true);
+        });
+
+        $('.room-rotate').click(function() {
+            var $room = $(this).parents('.room');
+
+            if ($room.find('.active').next().is('img')) {
+                $room.find('.active, .active + img').attr('aria-hidden', true).toggleClass('active');
+            } else {
+                $room.find('.active, img:first-of-type').attr('aria-hidden', true).toggleClass('active')
+            }
+        });
+
         //$('.rooms').on('wheel', (function(e) {
         //    e.preventDefault();
         //    if (e.originalEvent.deltaY > 0) {
@@ -476,38 +522,6 @@
         //   }
         //}));
     });
-
-    $(document).ready(function() {
-    $('.floors > .slick-next').click(function(){
-        if ($('.basement').hasClass('slick-active')) {
-            $(this).addClass('d-none');
-        }
-
-        $('.slick-prev').removeClass('d-none');
-    });
-
-    $('.floors > .slick-prev').click(function(){
-        if ($('.info').hasClass('slick-active')) {
-            $(this).addClass('d-none');
-        }
-
-        $('.slick-next').removeClass('d-none');
-    });
-
-    $('#home').click(function(){
-        $('.floors').slick('slickGoTo', 0, true);
-    });
-
-    $('.room-rotate').click(function() {
-        var $room = $(this).parents('.room');
-
-        if ($room.find('.active').next().is('img')) {
-            $room.find('.active, .active + img').attr('aria-hidden', true).toggleClass('active');
-        } else {
-            $room.find('.active, img:first-of-type').attr('aria-hidden', true).toggleClass('active')
-        }
-    });
-});
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
