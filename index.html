@@ -11,7 +11,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <style>
         .card{width:calc(100% - 2rem);}
-        .controls{left:1rem;top:1rem;width:calc(100% - 2rem);z-index:4;}
+        .controls{left:1%;top:1%;width:98%;z-index:4;}
         .elevator{height:64px;left:3px;position:absolute;top:50%;transform:translateY(-50%);width:1rem;}
         .elevator li{position:relative;}
         .elevator li:before{bottom:9px;color:#fff;font-size:10px;left:4.5px;position:absolute;}
@@ -33,7 +33,7 @@
         .rooms>.slick-dots li{margin-right:6px;}
         .rooms>.slick-next{height:100%;right:0;top:0;width:1rem;}
         .rooms>.slick-prev{height:100%;left:0;top:0;width:1rem;}
-        .slick-arrow{border:0;margin:0;opacity:0;padding:0;position:absolute;text-indent:99999vw;z-index:1;}
+        .slick-arrow{border:0;margin:0;display:none!important;opacity:0;padding:0;position:absolute;text-indent:99999vw;z-index:1;}
         .slick-dots{list-style:none;margin:0;padding:0;position:absolute;width:auto;}
         .slick-dots button{background:#fefefe;border:0;border-radius:50%;box-shadow:0 .125rem .25rem rgba(0,0,0,.075)!important;height:1rem;margin:0;padding:0;text-indent:99999vw;width:1rem;}
         .slick-active > button{background-color:transparent;background-image:url('img/star.svg');background-position:center;}
@@ -44,9 +44,11 @@
         }
 
         @media(min-width:768px) {
+            .controls{left:1rem;top:1rem;width:calc(100% - 2rem);}
             .floors>.slick-arrow{height:1rem;}
             .room img{height:auto;width:100vw;}
             .rooms>.slick-arrow{width:1rem;}
+            .slick-arrow{display:block!important;}
         }
     </style>
 </head>
