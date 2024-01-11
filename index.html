@@ -15,8 +15,8 @@
         .elevator{height:64px;left:3px;position:absolute;top:50%;transform:translateY(-50%);width:1rem;}
         .elevator li{position:relative;}
         .elevator li:before{bottom:9px;color:#fff;font-size:10px;left:4.5px;position:absolute;}
-        .elevator li:nth-child(2) button{background-color:#fff;background-image:url('img/info.svg');background-position:center;}
-        .elevator li.slick-active:nth-child(2) button{background-image:url('img/info-red.svg');}
+        .elevator li:nth-child(2) button{background-color:#fff;background-image:url('img/info.svg');background-position:center;background-repeat:no-repeat;}
+        .elevator li.slick-active:nth-child(2) button{background-image:url('img/info-red.svg');background-position:center;background-repeat:no-repeat;}
         .elevator li:nth-child(3):before{content:'2';}
         .elevator li:nth-child(4):before{bottom:9px;content:'1';left:5px;}
         .elevator li:nth-child(5):before{bottom:8px;content:'B';left:4.5px;}
@@ -25,6 +25,7 @@
         .floors>.slick-next{bottom:0;height:1rem;left:0;width:100%;}
         .floors>.slick-prev{height:1rem;left:0;top:0;width:100%;}
         .h-100vh,.slick-list,.slick-track{height:100vh!important;}
+        iframe{background:#fff;}
         .room img{display:none;height:100%;left:50%;position:absolute;top:50%;transform:translate(-50%,-50%);width:auto;}
         .room img.active{display:block;}
         .rooms{bottom:1px;}
@@ -34,7 +35,7 @@
         .rooms>.slick-prev{height:100%;left:0;top:0;width:1rem;}
         .slick-arrow{border:0;margin:0;opacity:0;padding:0;position:absolute;text-indent:99999vw;z-index:1;}
         .slick-dots{list-style:none;margin:0;padding:0;position:absolute;width:auto;}
-        .slick-dots button{background:#fefefe;border:0;border-radius:50%;box-shadow:0 .125rem .25rem rgba(0,0,0,.075)!important;height:1rem;text-indent:99999vw;width:1rem;}
+        .slick-dots button{background:#fefefe;border:0;border-radius:50%;box-shadow:0 .125rem .25rem rgba(0,0,0,.075)!important;height:1rem;margin:0;padding:0;text-indent:99999vw;width:1rem;}
         .slick-active > button{background-color:transparent;background-image:url('img/star.svg');background-position:center;}
         .slick-slide{overflow:hidden;}
 
@@ -49,7 +50,7 @@
         }
     </style>
 </head>
-<body class="overflow-hidden">
+<body class="bg-dark overflow-hidden">
 
 <div class="align-items-center controls d-flex justify-content-between position-fixed">
     <div class="contact dropdown shadow-sm" style="z-index:3;">
@@ -84,12 +85,12 @@
 
 <div class="floors">
     <div class="h-100vh position-relative rooms form">
-        <div class="align-items-center d-flex flex-column h-100 justify-content-center pt-5 text-center w-100">
+        <div class="align-items-center d-flex flex-column h-100 justify-content-center py-5 text-center w-100">
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfp2QdCa6UaJNhrLwCYaius775cnbBs9YBStdqD3_Nzm42Lbg/viewform?embedded=true" width="640" height="1423" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
     </div>
-    <div class="h-100vh position-relative rooms property">
-        <div class="align-items-center d-flex flex-column h-100 justify-content-center text-center">
+    <div class="h-100vh position-relative rooms property text-light">
+        <div class="align-items-center d-flex flex-column h-100 justify-content-center py-5 text-center">
             <h1>14311 Long Green Drive<br><span class="h2">Silver Spring, MD 20906</span></h1>
             <div class="h4 text-center">For Sale</div>
             <div class="d-flex mb-3">
