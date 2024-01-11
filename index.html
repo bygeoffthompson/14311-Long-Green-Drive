@@ -10,7 +10,6 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <style>
-        .bg-image{background-position:center;background-repeat:no-repeat;background-size:auto 100%;}
         .card{width:calc(100% - 2rem);}
         .dropdown{top:1rem;}
         .dropdown.contact{left:1rem;}
@@ -29,7 +28,7 @@
         .floors>.slick-prev{height:1rem;left:0;top:0;width:100%;}
         .h-100vh,.slick-list,.slick-track{height:100vh!important;}
         #home{background:transparent;border:0;left:50%;position:absolute;transform:translateX(-50%);top:16px;z-index:3;}
-        .room img{display:none;height:100%;width:100%;}
+        .room img{display:none;height:100%;left:50%;position:absolute;top:50%;transform:translate(-50%,-50%);width:auto;}
         .room img.active{display:block;}
         .rooms{bottom:1px;}
         .rooms>.slick-dots{bottom:1rem;display:flex;height:14px;position:absolute;left:50%;transform:translateX(-50%);z-index:9;}
@@ -40,15 +39,19 @@
         .slick-dots{list-style:none;margin:0;padding:0;position:absolute;width:auto;}
         .slick-dots button{background:#fefefe;border:0;border-radius:50%;box-shadow:0 .125rem .25rem rgba(0,0,0,.075)!important;height:1rem;text-indent:99999vw;width:1rem;}
         .slick-active > button{background-color:transparent;background-image:url('img/star.svg');background-position:center;}
+        .slick-slide{overflow:hidden;}
 
         @media(min-width:576px) {
             .card{width:50%;}
         }
 
         @media(min-width:768px) {
-            .bg-image{background-size:cover;}
             .floors>.slick-arrow{height:1rem;}
             .rooms>.slick-arrow{width:1rem;}
+        }
+
+        @media(min-width:992px) {
+            .room img{height:auto;width:100vw;}
         }
     </style>
 </head>
@@ -110,83 +113,87 @@
         </div>
     </div>
     <div class="h-100vh position-relative rooms second">
-        <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5" style="background-image:url(img/master-bath.jpg)">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title h4">Master Bath</div>
-                    <p class="card-text">Glass enclosed show and great lighting.</p>
+        <div class="h-100">
+            <div class="align-items-end d-flex justify-content-center h-100 position-relative room w-100">
+                <div class="bottom-0 h-100 position-absolute start-0 w-100">
+                    <img alt="Master Bath" aria-hidden="false" class="active" src="img/master-bath.jpg">
                 </div>
-            </div>
-        </div>
-        <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5" style="background-image:url(img/master-bedroom.jpg)">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title h4">Master Bedroom</div>
-                    <h6 class="card-subtitle mb-2 text-muted">Connects with the Master Bath</h6>
-                    <p class="card-text">Excellent size and wonderful window views!</p>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#masterWindow1">
-                        Window View 1
-                    </button>
-                    <div class="modal fade" id="masterWindow1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="border-0 modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body p-0">
-                                    <img class="img-fluid" src="img/window-1.jpg">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#masterWindow2">
-                        Window View 2
-                    </button>
-                    <div class="modal fade" id="masterWindow2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="border-0 modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body p-0">
-                                    <img class="img-fluid" src="img/window-2.jpg">
-                                </div>
-                            </div>
+                <div class="card mb-5">
+                    <div class="card-body text-center">
+                        <div class="align-items-center card-title d-flex justify-content-center">
+                            <h3 class="mb-0">Master Bath</h3>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5" style="background-image:url(img/stair-2b.jpg)">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title h4">Stairs</div>
-                    <p class="card-text">Two turn staircase.</p>
+        <div class="h-100">
+            <div class="align-items-end d-flex justify-content-center h-100 position-relative room w-100">
+                <div class="bottom-0 h-100 position-absolute start-0 w-100">
+                    <img alt="Master Bedroom" aria-hidden="false" class="active" src="img/master-bedroom.jpg">
+                </div>
+                <div class="card mb-5">
+                    <div class="card-body text-center">
+                        <div class="align-items-center card-title d-flex justify-content-center">
+                            <h3 class="mb-0">Master Bedroom</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5" style="background-image:url(img/upstairs.jpg)">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title h4">Upstairs Hallway</div>
-                    <p class="card-text">Light Oak style laminate flooring.</p>
-                    <p class="card-text">Sliding door closet located on the left.</p>
+        <div class="h-100">
+            <div class="align-items-end d-flex justify-content-center h-100 position-relative room w-100">
+                <div class="bottom-0 h-100 position-absolute start-0 w-100">
+                    <img alt="Staircase" aria-hidden="false" class="active" src="img/stair-2b.jpg">
+                </div>
+                <div class="card mb-5">
+                    <div class="card-body text-center">
+                        <div class="align-items-center card-title d-flex justify-content-center">
+                            <h3 class="mb-0">Staircase</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5" style="background-image:url(img/bedroom-2.jpg)">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title h4">Bedroom 2</div>
-                    <p class="card-text"></p>
+        <div class="h-100">
+            <div class="align-items-end d-flex justify-content-center h-100 position-relative room w-100">
+                <div class="bottom-0 h-100 position-absolute start-0 w-100">
+                    <img alt="Upstairs" aria-hidden="false" class="active" src="img/upstairs.jpg">
+                </div>
+                <div class="card mb-5">
+                    <div class="card-body text-center">
+                        <div class="align-items-center card-title d-flex justify-content-center">
+                            <h3 class="mb-0">Upstairs</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5" style="background-image:url(img/bath-2.jpg)">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title h4">Bath 2</div>
-                    <p class="card-text"></p>
+        <div class="h-100">
+            <div class="align-items-end d-flex justify-content-center h-100 position-relative room w-100">
+                <div class="bottom-0 h-100 position-absolute start-0 w-100">
+                    <img alt="Bedroom 2" aria-hidden="false" class="active" src="img/bedroom-2.jpg">
+                </div>
+                <div class="card mb-5">
+                    <div class="card-body text-center">
+                        <div class="align-items-center card-title d-flex justify-content-center">
+                            <h3 class="mb-0">Bedroom 2</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="h-100">
+            <div class="align-items-end d-flex justify-content-center h-100 position-relative room w-100">
+                <div class="bottom-0 h-100 position-absolute start-0 w-100">
+                    <img alt="Bath 2" aria-hidden="false" class="active" src="img/bath-2.jpg">
+                </div>
+                <div class="card mb-5">
+                    <div class="card-body text-center">
+                        <div class="align-items-center card-title d-flex justify-content-center">
+                            <h3 class="mb-0">Bath 2</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -259,9 +266,53 @@
         <div class="h-100">
             <div class="align-items-end d-flex justify-content-center h-100 position-relative room w-100">
                 <div class="bottom-0 h-100 position-absolute start-0 w-100">
-                    <img alt="Living Room 1" class="active" src="img/living-room-1.jpg">
-                    <img alt="Living Room 2" src="img/living-room-2.jpg">
-                    <img alt="Living Room 3" src="img/living-room-3.jpg">
+                    <img alt="Living Room 1" aria-hidden="false" class="active" src="img/living-room-1.jpg">
+                    <img alt="Living Room 2" aria-hidden="true" src="img/living-room-2.jpg">
+                    <img alt="Living Room 3" aria-hidden="true" src="img/living-room-3.jpg">
+                </div>
+                <div class="card mb-5">
+                    <div class="card-body text-center">
+                        <div class="align-items-center card-title d-flex justify-content-center">
+                            <h3 class="mb-0">Living Room</h3>
+                            <button type="button" class="room-rotate btn ms-2 px-2 py-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2z"/>
+                                    <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="h-100">
+            <div class="align-items-end d-flex justify-content-center h-100 position-relative room w-100">
+                <div class="bottom-0 h-100 position-absolute start-0 w-100">
+                    <img alt="Living Room 1" aria-hidden="false" class="active" src="img/living-room-1.jpg">
+                    <img alt="Living Room 2" aria-hidden="true" src="img/living-room-2.jpg">
+                    <img alt="Living Room 3" aria-hidden="true" src="img/living-room-3.jpg">
+                </div>
+                <div class="card mb-5">
+                    <div class="card-body text-center">
+                        <div class="align-items-center card-title d-flex justify-content-center">
+                            <h3 class="mb-0">Living Room</h3>
+                            <button type="button" class="room-rotate btn ms-2 px-2 py-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2z"/>
+                                    <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="h-100">
+            <div class="align-items-end d-flex justify-content-center h-100 position-relative room w-100">
+                <div class="bottom-0 h-100 position-absolute start-0 w-100">
+                    <img alt="Living Room 1" aria-hidden="false" class="active" src="img/living-room-1.jpg">
+                    <img alt="Living Room 2" aria-hidden="true" src="img/living-room-2.jpg">
+                    <img alt="Living Room 3" aria-hidden="true" src="img/living-room-3.jpg">
                 </div>
                 <div class="card mb-5">
                     <div class="card-body text-center">
@@ -288,59 +339,101 @@
         </div>
     </div>
     <div class="h-100vh position-relative rooms basement">
-        <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title h4">Stairs Up</div>
-                    <p class="card-text"></p>
+        <div class="h-100">
+            <div class="align-items-end d-flex justify-content-center h-100 position-relative room w-100">
+                <div class="bottom-0 h-100 position-absolute start-0 w-100">
+                    <img alt="Stairway" aria-hidden="false" class="active" src="img/stairway.jpg">
+                </div>
+                <div class="card mb-5">
+                    <div class="card-body text-center">
+                        <div class="align-items-center card-title d-flex justify-content-center">
+                            <h3 class="mb-0">Stairway</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title h4">Hallway</div>
-                    <p class="card-text"></p>
+        <div class="h-100">
+            <div class="align-items-end d-flex justify-content-center h-100 position-relative room w-100">
+                <div class="bottom-0 h-100 position-absolute start-0 w-100">
+                    <img alt="Hallway" aria-hidden="false" class="active" src="img/hallway.jpg">
+                </div>
+                <div class="card mb-5">
+                    <div class="card-body text-center">
+                        <div class="align-items-center card-title d-flex justify-content-center">
+                            <h3 class="mb-0">Hallway</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title h4">Bath</div>
-                    <p class="card-text"></p>
+        <div class="h-100">
+            <div class="align-items-end d-flex justify-content-center h-100 position-relative room w-100">
+                <div class="bottom-0 h-100 position-absolute start-0 w-100">
+                    <img alt="Bath" aria-hidden="false" class="active" src="img/bath.jpg">
+                </div>
+                <div class="card mb-5">
+                    <div class="card-body text-center">
+                        <div class="align-items-center card-title d-flex justify-content-center">
+                            <h3 class="mb-0">Bath</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title h4">Mechanical</div>
-                    <p class="card-text"></p>
+        <div class="h-100">
+            <div class="align-items-end d-flex justify-content-center h-100 position-relative room w-100">
+                <div class="bottom-0 h-100 position-absolute start-0 w-100">
+                    <img alt="Mechanical" aria-hidden="false" class="active" src="img/mechanical.jpg">
+                </div>
+                <div class="card mb-5">
+                    <div class="card-body text-center">
+                        <div class="align-items-center card-title d-flex justify-content-center">
+                            <h3 class="mb-0">Mechanical</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title h4">Finished Room</div>
-                    <p class="card-text"></p>
+        <div class="h-100">
+            <div class="align-items-end d-flex justify-content-center h-100 position-relative room w-100">
+                <div class="bottom-0 h-100 position-absolute start-0 w-100">
+                    <img alt="Basement" aria-hidden="false" class="active" src="img/basement.jpg">
+                </div>
+                <div class="card mb-5">
+                    <div class="card-body text-center">
+                        <div class="align-items-center card-title d-flex justify-content-center">
+                            <h3 class="mb-0">Basement</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title h4">Backyard</div>
-                    <p class="card-text"></p>
+        <div class="h-100">
+            <div class="align-items-end d-flex justify-content-center h-100 position-relative room w-100">
+                <div class="bottom-0 h-100 position-absolute start-0 w-100">
+                    <img alt="Backyard" aria-hidden="false" class="active" src="img/backyard.jpg">
+                </div>
+                <div class="card mb-5">
+                    <div class="card-body text-center">
+                        <div class="align-items-center card-title d-flex justify-content-center">
+                            <h3 class="mb-0">Backyard</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="align-items-end bg-image d-flex justify-content-center h-100 pb-5">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title h4">Side Yard</div>
-                    <p class="card-text"></p>
+        <div class="h-100">
+            <div class="align-items-end d-flex justify-content-center h-100 position-relative room w-100">
+                <div class="bottom-0 h-100 position-absolute start-0 w-100">
+                    <img alt="Side Yard" aria-hidden="false" class="active" src="img/side-yard.jpg">
+                </div>
+                <div class="card mb-5">
+                    <div class="card-body text-center">
+                        <div class="align-items-center card-title d-flex justify-content-center">
+                            <h3 class="mb-0">Side Yard</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -407,10 +500,10 @@
         var $room = $(this).parents('.room');
 
         if ($room.find('.active').next().is('img')) {
-            $room.find('.active').toggleClass('active').next().toggleClass('active');
+            $room.find('.active').attr('aria-hidden', true).toggleClass('active').next().attr('aria-hidden', false).toggleClass('active');
         } else {
-            $room.find('.active').toggleClass('active')
-            $room.find('img:first-of-type').toggleClass('active');
+            $room.find('.active').attr('aria-hidden', true).toggleClass('active')
+            $room.find('img:first-of-type').attr('aria-hidden', false).toggleClass('active');
         }
     });
 });
