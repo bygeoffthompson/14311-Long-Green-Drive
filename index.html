@@ -11,7 +11,9 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <style>
         .card{width:calc(100% - 2rem);}
-        .controls{left:1%;top:1%;width:98%;z-index:4;}
+        .contact{left:2px;}
+        .details{right:2px;}
+        .dropdown{top:2px;z-index:4;}
         .elevator{height:64px;left:3px;position:absolute;top:50%;transform:translateY(-50%);width:1rem;}
         .elevator li{position:relative;}
         .elevator li:before{bottom:9px;color:#fff;font-size:10px;left:4.5px;position:absolute;}
@@ -44,8 +46,10 @@
         }
 
         @media(min-width:768px) {
-            .btn-grow{border-radius:.25rem!important;padding:.375rem .75rem!important;font-size:1rem!important;}
-            .controls{left:1rem;top:1rem;width:calc(100% - 2rem);}
+            .btn-sm{border-radius:.25rem!important;padding:.375rem .75rem!important;font-size:1rem!important;}
+            .contact{left:1rem;}
+            .details{right:1rem;}
+            .dropdown{top:1rem;}
             .floors>.slick-arrow{height:1rem;}
             .room img{height:auto;width:100vw;}
             .rooms>.slick-arrow{width:1rem;}
@@ -55,9 +59,9 @@
 </head>
 <body class="bg-dark overflow-hidden">
 
-<div class="align-items-center controls d-flex justify-content-between position-fixed">
-    <div class="contact dropdown shadow-sm" style="z-index:3;">
-        <button class="btn btn-danger btn-grow btn-sm dropdown-toggle" type="button" id="contactMenu" data-bs-toggle="dropdown" aria-expanded="false">
+
+    <div class="contact dropdown position-fixed shadow-sm" style="z-index:3;">
+        <button class="btn btn-danger btn-sm dropdown-toggle" type="button" id="contactMenu" data-bs-toggle="dropdown" aria-expanded="false">
             Rent It
         </button>
         <ul class="dropdown-menu" aria-labelledby="contactMenu">
@@ -66,8 +70,8 @@
         </ul>
     </div>
 
-    <div class="details dropdown shadow-sm" style="z-index:3;">
-        <button class="btn btn-grow btn-sm btn-warning dropdown-toggle" type="button" id="detailsMenu" data-bs-toggle="dropdown" aria-expanded="false">
+    <div class="details dropdown position-fixed shadow-sm" style="z-index:3;">
+        <button class="btn btn-sm btn-warning dropdown-toggle" type="button" id="detailsMenu" data-bs-toggle="dropdown" aria-expanded="false">
             Contact Us
         </button>
         <ul class="dropdown-menu" aria-labelledby="detailsMenu">
@@ -75,7 +79,7 @@
              <li><a class="dropdown-item" href="mailto:a@a.a">Email</a></li>
         </ul>
     </div>
-</div>
+
 
 <div class="floors">
     <div class="h-100vh position-relative rooms form">
